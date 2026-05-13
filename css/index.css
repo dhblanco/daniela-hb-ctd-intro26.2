@@ -1,0 +1,57 @@
+* {
+  outline: 2px solid #6B4A2E;
+}
+
+body {
+    background-color: #FFF7E6;  /*  VANILLA CREAM  */
+    color: #D18B47;             /*  DEEP CARAMEL   */
+    font-family: sans-serif;
+    font-size: medium;
+    margin: 16px 16px 16px 16px;
+    padding: 16px;
+
+}
+h1 {
+    font-family: "Pacifico", serif;
+    color: #6B4A2E;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin: -6px;
+}
+.heading {
+        color: #A65E2E;
+        font-size: large;
+        font-weight: bold;
+}
+
+a:focus {
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #D18B47;
+}
+
+a:active {
+  background: #D18B47;
+  color: #FFF7E6;
+}
+
+li {
+    list-style-type: square;
+}
+/*  Change the background color of the page body
+ Change the default text color
+ Customize the font family
+ STRETCH GOAL (optional): load in a font family from Google Fonts
+ Add spacing (padding/margin) between sections
+ Change the alignment of the content of one of your sections
+ Change the font size, weight, and color of headings
+ Transform the style of your Name at the top of the page
+ STRETCH GOAL (optional): add a picture of yourself to HTML and/or CSS (remember to include accessibility aspects if you add any images!)
+ Transform the "Experience" list items into styled blocks
+ Transform the style of the "Connect" links
+ STRETCH GOAL (optional): make or use social media icons to replace your link text with images
+By the end of this section, you should have basic styling and have changed a minimum of one background color, one font, one text color, the padding and margin of one element, the alignment of one element, the look of the heading elements, the look of your name, the look of list items, the look of links. */
