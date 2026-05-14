@@ -1,10 +1,10 @@
-/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD 
+/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD */
 
 * {
   outline: 2px solid #6B4A2E;
 }
 
-BUT FOR NOW LET'S SEE WHAT WE HAVE! */
+/* BUT FOR NOW LET'S SEE WHAT WE HAVE! */
 
 body {
     background-color: #FFF7E6;  
@@ -29,9 +29,18 @@ h1 {
         font-weight: bold;
 }
 
+nav {
+    margin: 0 auto;
+    max-width: 75%;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+}
 .menu {
-    position:-webkit-sticky;
-    position:sticky;
+    padding: 8px;
 }
 
 a:focus {
