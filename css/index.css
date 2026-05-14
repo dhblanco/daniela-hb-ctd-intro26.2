@@ -1,18 +1,24 @@
-/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD */
+/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD 
 
 * {
   outline: 2px solid #6B4A2E;
 }
 
-/* BUT FOR NOW LET'S SEE WHAT WE HAVE! */
+BUT FOR NOW LET'S SEE WHAT WE HAVE! */
 
 body {
-    background-color: #FFF7E6;  
+    background-color: #F9F3EC;  
     color: #D18B47;             
     font-family: sans-serif;
     font-size: medium;
     margin: 16px 16px 16px 16px;
     padding: 16px;
+
+}
+section {
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #FFF7E6;  
 
 }
 h1 {
@@ -36,8 +42,17 @@ nav {
     position: sticky;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap;
     font-weight: bold;
+}
+
+.connect-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap;    
 }
 .menu {
     padding: 8px;
