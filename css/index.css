@@ -1,0 +1,99 @@
+/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD
+
+* {
+  outline: 2px solid #6B4A2E;
+}
+
+BUT FOR NOW LET'S SEE WHAT WE HAVE! */
+
+body {
+    background-color: #F9F3EC;  
+    color: #D18B47;             
+    font-family: sans-serif;
+    font-size: medium;
+    margin: 16px 16px 16px 16px;
+    padding: 16px;
+
+}
+section {
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #FFF7E6;  
+    scroll-margin-top: 30px;
+
+}
+h1 {
+    font-family: "Pacifico", serif;
+    color: #6B4A2E;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin: -6px;
+}
+.heading {
+        color: #A65E2E;
+        font-size: large;
+        font-weight: bold;
+}
+
+nav {
+    top: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap;
+    font-weight: bold;
+    padding: 2px;
+    z-index: 100;
+    background-color: #F9F3EC;
+}
+
+.connect-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap;    
+}
+.menu {
+    padding: 8px;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+a:focus {
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #D18B47;
+}
+
+a:active {
+  background: #D18B47;
+  color: #FFF7E6;
+}
+
+.experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+}
+
+li {
+    list-style-type: square;
+}
+
+.experience-list li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 250px;
+}
