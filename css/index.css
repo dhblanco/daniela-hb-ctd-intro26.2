@@ -72,6 +72,10 @@ a:active {
   color: #FFF7E6;
 }
 
+.experience-list {
+    display: flex;
+}
+
 li {
     list-style-type: square;
 }
