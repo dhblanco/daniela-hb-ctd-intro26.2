@@ -79,11 +79,21 @@ a:active {
   color: #FFF7E6;
 }
 
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+}
+
 .experience-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     padding: 0;
+
 }
 
 li {
@@ -91,6 +101,14 @@ li {
 }
 
 .experience-list li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 250px;
+}
+
+.skills-list li {
     list-style: none;
     background-color: #F8E8D0;
     border: 2px dotted #a7886d;
