@@ -13,11 +13,17 @@ copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
 footer.appendChild(copyRight)
 document.body.appendChild(footer)
 
-let skills = ["JavaScript", "HTML", "CSS", "GitHub"]
-let skillsList = document.querySelector("#Skills ul")
+let skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 
-for (let i=0; i < skills.length; i++) {
-    let skill = document.createElement("li")
-    skill.innerText = skills[i]
-    skillsList.appendChild(skill)
+// Prev code: let skillsList = document.querySelector("#Skills ul")
+// Get the skills section by its ID first
+let skillsSection = document.getElementById("Skills"); 
+
+// Then query the <ul> from the skillsSection variable
+let skillsList = skillsSection.querySelector('ul'); 
+
+for (let i = 0; i < skills.length; i++) {
+    let skill = document.createElement("li");
+    skill.innerText = skills[i]; // Use innerText for plain text
+    skillsList.appendChild(skill);
 }
