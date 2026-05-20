@@ -18,6 +18,6 @@ let skillsList = document.querySelector("#Skills ul")
 
 for (let i=0; i < skills.length; i++) {
     let skill = document.createElement("li")
-    skill.innerHTML = skills[i]
+    skill.innerText = skills[i]
     skillsList.appendChild(skill)
 }
