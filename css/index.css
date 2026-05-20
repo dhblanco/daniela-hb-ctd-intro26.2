@@ -6,6 +6,8 @@
 
 BUT FOR NOW LET'S SEE WHAT WE HAVE! */
 
+
+
 body {
     background-color: #F9F3EC;  
     color: #D18B47;             
@@ -15,6 +17,13 @@ body {
     padding: 16px;
 
 }
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 section {
     margin: 10px auto;
     padding: 8px;
@@ -30,6 +39,11 @@ h1 {
     letter-spacing: 0.04em;
     margin: -6px;
 }
+
+h2 {
+    font-family: "Great Vibes", cursive;
+}
+
 .heading {
         color: #A65E2E;
         font-size: large;
