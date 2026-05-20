@@ -3,7 +3,7 @@ let thisYear = today.getFullYear()
 
 let footer = document.querySelector('footer')
 let copyRight = document.createElement('p')
-copyRight.innerHTML = `&copy; ${thisYear} Daniela Herández Blanco`
+copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
 
 footer.appendChild(copyRight)
 
