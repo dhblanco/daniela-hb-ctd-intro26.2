@@ -31,6 +31,7 @@ section {
     scroll-margin-top: 30px;
 
 }
+
 h1 {
     font-family: "Pacifico", serif;
     color: #6B4A2E;
@@ -40,15 +41,18 @@ h1 {
     margin: -6px;
 }
 
-h2 {
-    font-family: "Great Vibes", cursive;
+.drip {
+    top: 0;
+    margin: -26px auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    opacity: 0.75;
+    z-index: 100;
 }
 
-.heading {
-        color: #A65E2E;
-        font-size: large;
-        font-weight: bold;
-}
 
 nav {
     top: 0;
@@ -62,21 +66,32 @@ nav {
     gap: 8px; 
     flex-wrap: wrap;
     font-weight: bold;
-    padding: 2px;
-    z-index: 100;
-    background-color: #F9F3EC;
+    padding: 0px;
+    z-index: 99;
+    background: #A65E2E;
+    opacity: 80%;
 }
 
-.connect-links {
-    display: flex;
-    justify-content: center;
-    gap: 8px; 
-    flex-wrap: wrap;    
+h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 20px;
+
 }
+
+.heading {
+        color: #A65E2E;
+        font-size: large;
+        font-weight: bold;
+}
+
+
 .menu {
     padding: 8px;
     text-transform: lowercase;
     text-decoration: none;
+    color: #F8E8D0;
+
+    
 }
 
 a:focus {
@@ -91,6 +106,13 @@ a:hover {
 a:active {
   background: #D18B47;
   color: #FFF7E6;
+}
+
+.connect-links  {
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap; 
 }
 
 .skills-list {
