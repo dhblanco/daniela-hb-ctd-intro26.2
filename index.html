@@ -16,10 +16,9 @@
 </head>
 <body>
 
-        <h1>Daniela Hernández Blanco</h1>
+    <h1>Daniela Hernández Blanco</h1>
 
-    <header class="hero">  
-          
+    <header class="hero">     
         <img src="img/caramel-transparent.png" class="drip">
     </header>
    <nav>
@@ -28,6 +27,8 @@
                 <a href="#Skills" class="menu">Skills</a>
                 <a href="#Projects" class="menu">Projects</a>
                 <a href="#Connect" class="menu">Connect</a>
+                <a href="#leaveMessage" class="menu">Message</a>
+
     </nav> 
     <section id = "About">
         <h2 class="heading">About</h2>
@@ -62,6 +63,25 @@
         <a href = "https://www.linkedin.com/in/daniela-hern%C3%A1ndez-blanco-22326498/" class="menu"><img src="https://img.icons8.com/?size=75&id=42823&format=png&color=000000" alt="cute linkedin logo to invite you to connect with me on linkedin!"></a>
         </div>
     </section>
+    <section id="leaveMessage">
+        <h2>Leave a message</h2>
+        <form name="leave_message">
+            <label>
+                Name <br><input type="text" name="usersName" required>
+            </label>
+            
+            <label>
+                Email<input type="email" name="usersEmmail" required>
+           </label>
+           <label>
+                Message<textarea name="usersMessage" required></textarea>
+            </label>
+                <button type="submit">Submit</button>
+            <br>
+        </form>
+    </section>
+    <footer>
+    </footer>
     <script src="js/index.js"></script>
 </body>
 </html>

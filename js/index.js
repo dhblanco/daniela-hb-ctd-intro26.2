@@ -4,7 +4,7 @@ let thisYear = today.getFullYear()
 /* let footer = document.querySelector('footer') */
     /* Instead of inserting footer manually via HTML using document.querySelector, I edited code to create footer using Javascript "in order to more closely the instructions suggested adding the footer via DOM methods." */
  
-let footer = document.createElement('footer')
+let footer = document.querySelector('footer')
 let copyRight = document.createElement('p')
 
 /* AIRHUB feedback suggested considering using innerText instead, instead of innerHTML to prevent unintended HTML parsing and improve clarity. However, in this case, this would result in the text is treated as literal text, so &copy; would be displayed exactly as written rather than being interpreted as the HTML entity for the copyright symbol. */
@@ -27,3 +27,11 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i]; // Use innerText for plain text
     skillsList.appendChild(skill);
 }
+
+//Form
+let form = document.querySelector('form')
+form.addEventListener('submit',function(event){
+    event.preventDefault();
+    let name = event.target.usersName.value
+    console.log(name)
+})
