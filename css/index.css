@@ -6,6 +6,8 @@
 
 BUT FOR NOW LET'S SEE WHAT WE HAVE! */
 
+
+
 body {
     background-color: #F9F3EC;  
     color: #D18B47;             
@@ -15,6 +17,13 @@ body {
     padding: 16px;
 
 }
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 section {
     margin: 10px auto;
     padding: 8px;
@@ -22,19 +31,36 @@ section {
     scroll-margin-top: 30px;
 
 }
+
 h1 {
     font-family: "Pacifico", serif;
     color: #6B4A2E;
     font-size: 30px;
     text-align: center;
     letter-spacing: 0.04em;
-    margin: -6px;
+    margin: -6px 6px;
+    position: relative;
+
 }
-.heading {
-        color: #A65E2E;
-        font-size: large;
-        font-weight: bold;
+
+.hero {
+    position: relative;
+        top: -20px;
 }
+
+.drip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -32px auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.65;
+    z-index: 1;
+    pointer-events: none;
+}
+
 
 nav {
     top: 0;
@@ -48,21 +74,33 @@ nav {
     gap: 8px; 
     flex-wrap: wrap;
     font-weight: bold;
-    padding: 2px;
-    z-index: 100;
-    background-color: #F9F3EC;
+    padding: 0px;
+    background: #A65E2E;
+    opacity: 95%;
+    z-index: 0;
+
 }
 
-.connect-links {
-    display: flex;
-    justify-content: center;
-    gap: 8px; 
-    flex-wrap: wrap;    
+h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 20px;
+
 }
+
+.heading {
+        color: #A65E2E;
+        font-size: large;
+        font-weight: bold;
+}
+
+
 .menu {
     padding: 8px;
     text-transform: lowercase;
     text-decoration: none;
+    color: #F8E8D0;
+
+    
 }
 
 a:focus {
@@ -79,11 +117,28 @@ a:active {
   color: #FFF7E6;
 }
 
+.connect-links  {
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap; 
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+}
+
 .experience-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     padding: 0;
+
 }
 
 li {
@@ -91,6 +146,14 @@ li {
 }
 
 .experience-list li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 250px;
+}
+
+.skills-list li {
     list-style: none;
     background-color: #F8E8D0;
     border: 2px dotted #a7886d;
