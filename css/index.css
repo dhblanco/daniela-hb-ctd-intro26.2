@@ -18,6 +18,7 @@ body {
 
 }
 
+
 .great-vibes-regular {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
@@ -35,7 +36,7 @@ section {
 h1 {
     font-family: "Pacifico", serif;
     color: #6B4A2E;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     letter-spacing: 0.04em;
     margin: -6px 6px;
@@ -83,13 +84,12 @@ nav {
 
 h2 {
     font-family: "Great Vibes", cursive;
-    font-size: 20px;
-
+    font-size: 30px;
+    color: #A65E2E;
 }
 
 .heading {
         color: #A65E2E;
-        font-size: large;
         font-weight: bold;
 }
 
