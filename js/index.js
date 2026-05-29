@@ -15,9 +15,9 @@ document.body.appendChild(footer)
 
 let skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 
-// Prev code: let skillsList = document.querySelector("#Skills ul")
+// Prev code: let skillsList = document.querySelector("#skills ul")
 // Get the skills section by its ID first
-let skillsSection = document.getElementById("Skills"); 
+let skillsSection = document.getElementById("skills"); 
 
 // Then query the <ul> from the skillsSection variable
 let skillsList = skillsSection.querySelector('ul'); 
