@@ -41,7 +41,6 @@ messageForm.addEventListener('submit',function(event){
     console.log(name)
     console.log(email)
     console.log(message)
-    messageForm.reset()
     
     // INSTRUCTION NOTES: The spec calls for each new message <li> 
     //  -  to contain an <a> with the user’s name 
@@ -69,6 +68,9 @@ messageForm.addEventListener('submit',function(event){
         let entry = removeButton.parentNode
         entry.remove()
     })
+
+    messageForm.reset()
+
 })
 
 
