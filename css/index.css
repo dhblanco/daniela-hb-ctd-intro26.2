@@ -203,17 +203,17 @@ form[name='leave_message'] button {
 
 #terminal {
     background-color: #1a1410;
-    color: #e2fded;
+    color: #ffffff;
     font-family: "Source Code Pro", monospace;
     padding: 16px;
-    border: 1px solid #e2fded;
+    border: 1px solid #F9F3EC;
     margin-top: 16px;
 }
 
 #terminal::before {
     content: "$ git add guestbook.md";
     display: block;
-    color: #e2fded;
+    color: #ffffff;
     margin-bottom: 8px;
 }
 

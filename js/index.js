@@ -43,19 +43,20 @@ messageForm.addEventListener('submit',function(event){
     console.log(message)
     messageForm.reset()
     
-    let newMessage = document.createElement('li');
-    messageList.appendChild(newMessage)
-   // newMessage.innerHTML=`<a href="mailto:${email}">${name}</a>: <span>"${message}" </span>`;
-    //newMessage.innerHTML =
-    //    `<span class="userTerminal">${name}@visitor-list <a href="mailto:${email}" class="email">(${email})</a> </span> <span class="pathTerminal">MINGW64 ~/messages</span> (log)
-//$ git commit -m "${message}"   `;
-newMessage.innerHTML =
-`<span class="userTerminal">visitor@portfolio</span> <span class="pathTerminal">MINGW64 ~/guestbook</span> (messages)
-$ git commit --author="${name} <a href="mailto:${email}" class="email">${email}</a>" -m "${message}" `;
-    // would be cool to add a show email button that will show this msg
-    // `$ git config user.email
-    // ${email}`
+    // INSTRUCTION NOTES: The spec calls for each new message <li> 
+    //  -  to contain an <a> with the user’s name 
+    //  -  linking via mailto: and a <span> for the message. 
+    //  > > for example: <a href="mailto:email@example.com">User Name</a><span>The message text</span>.
 
+    let newMessage = document.createElement('li');
+    messageList.appendChild(newMessage);
+    newMessage.innerHTML = `<span class="userTerminal">visitor@portfolio</span> <span class="pathTerminal">MINGW64 ~/guestbook</span> (messages) 
+    $ git commit --author="<a href="mailto:${email}" class="email">${name}</a>" -m "${message}" `;
+
+    // FUTURE PERSONAL GOALS: Add a "show email" button
+    //  - add button inline before "remove button"
+    //  - create a new element to simulate a terminal entry
+    //  > > for example: `$ git config user.email <br> ${email}`
 
     //Remove Button
     let removeButton = document.createElement("button")
