@@ -45,7 +45,17 @@ messageForm.addEventListener('submit',function(event){
     
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage)
-    newMessage.innerHTML=`<a href="mailto:${email}">${name}</a>: <span>"${message}"</span>`;
+   // newMessage.innerHTML=`<a href="mailto:${email}">${name}</a>: <span>"${message}" </span>`;
+    //newMessage.innerHTML =
+    //    `<span class="userTerminal">${name}@visitor-list <a href="mailto:${email}" class="email">(${email})</a> </span> <span class="pathTerminal">MINGW64 ~/messages</span> (log)
+//$ git commit -m "${message}"   `;
+newMessage.innerHTML =
+`<span class="userTerminal">visitor@portfolio</span> <span class="pathTerminal">MINGW64 ~/guestbook</span> (messages)
+$ git commit --author="${name} <a href="mailto:${email}" class="email">${email}</a>" -m "${message}" `;
+    // would be cool to add a show email button that will show this msg
+    // `$ git config user.email
+    // ${email}`
+
 
     //Remove Button
     let removeButton = document.createElement("button")
