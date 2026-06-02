@@ -29,12 +29,12 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 //Form
-let messageForm = document.querySelector('messageForm[name="leave_message"]')
+let messageForm = document.querySelector('form[name="leave_message"]')
 console.log(messageForm)
 messageForm.addEventListener('submit',function(event){
     event.preventDefault();
     let name = event.target.usersName.value
-    let email = event.target.usersEmaill.value
+    let email = event.target.usersEmail.value
     let message = event.target.usersMessage.value
     console.log(name)
     console.log(email)
