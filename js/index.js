@@ -46,11 +46,16 @@ messageForm.addEventListener('submit',function(event){
     //  -  to contain an <a> with the user’s name 
     //  -  linking via mailto: and a <span> for the message. 
     //  > > for example: <a href="mailto:email@example.com">User Name</a><span>The message text</span>.
-
+    
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage);
-    newMessage.innerHTML = `<span class="userTerminal">visitor@portfolio</span> <span class="pathTerminal">MINGW64 ~/guestbook</span> (messages) 
-    $ git commit --author="<a href="mailto:${email}" class="email">${name}</a>" -m "${message}" `;
+    newMessage.innerHTML = `$ git commit --author="<a href="mailto:${email}}">${name}</a>" -m "<span>${message}</span>" `
+
+
+    // FUTURE PERSONAL GOALS: Edit newMessage to better emulate terminal style messges
+    // > > Example:  newMessage.innerHTML = 
+    //               `<span class="userTerminal">visitor@portfolio</span> <span class="pathTerminal">MINGW64 ~/guestbook</span> (messages) 
+    //              $ git commit --author="<a href="mailto:${email}" class="email">${name}</a>" -m "${message}" `;
 
     // FUTURE PERSONAL GOALS: Add a "show email" button
     //  - add button inline before "remove button"
