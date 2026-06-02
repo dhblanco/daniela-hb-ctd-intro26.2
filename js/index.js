@@ -49,7 +49,7 @@ messageForm.addEventListener('submit',function(event){
     
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage);
-    newMessage.innerHTML = `$ git commit --author="<a href="mailto:${email}}">${name}</a>" -m "<span>${message}</span>" `
+    newMessage.innerHTML = `$ git commit --author="<a href="mailto:${email}">${name}</a>" -m "<span>${message}</span>" `
 
 
     // FUTURE PERSONAL GOALS: Edit newMessage to better emulate terminal style messges
