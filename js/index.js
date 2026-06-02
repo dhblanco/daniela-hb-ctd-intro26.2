@@ -29,9 +29,15 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 //Form
-let form = document.querySelector('form')
-form.addEventListener('submit',function(event){
+let messageForm = document.querySelector('messageForm[name="leave_message"]')
+console.log(messageForm)
+messageForm.addEventListener('submit',function(event){
     event.preventDefault();
     let name = event.target.usersName.value
+    let email = event.target.usersEmaill.value
+    let message = event.target.usersMessage.value
     console.log(name)
+    console.log(email)
+    console.log(message)
+    messageForm.reset()
 })
