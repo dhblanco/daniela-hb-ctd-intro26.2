@@ -16,11 +16,13 @@ document.body.appendChild(footer)
 let skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 
 // Prev code: let skillsList = document.querySelector("#skills ul")
-// Get the skills section by its ID first
+// AIRHUB suggests to get the skills and messages section by its ID first
 let skillsSection = document.getElementById("skills"); 
+let messageSection = document.getElementById("messages")
 
-// Then query the <ul> from the skillsSection variable
-let skillsList = skillsSection.querySelector('ul'); 
+// Then query the <ul> from the section variables
+let skillsList = skillsSection.querySelector('ul');
+let messageList = messageSection.querySelector('ul'); 
 
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement("li");
@@ -40,4 +42,17 @@ messageForm.addEventListener('submit',function(event){
     console.log(email)
     console.log(message)
     messageForm.reset()
+    
+    let newMessage = document.createElement('li');
+    messageList.appendChild('message')
+    newMessage.innerText=name;
+})
+
+
+//Remove Button
+let removeButton = document.createElement("button")
+removeButton.innerText = "remove"
+removeButton.addEventListener('click',function(){
+    let entry = removeButton.parentNode
+    entry.remove()
 })
