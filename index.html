@@ -16,26 +16,27 @@
 </head>
 <body>
 
-        <h1>Daniela Hernández Blanco</h1>
+    <h1>Daniela Hernández Blanco</h1>
 
-    <header class="hero">  
-          
+    
         <img src="img/caramel-transparent.png" class="drip">
-    </header>
+
    <nav>
-                <a href="#About" class="menu">About</a>
-                <a href="#Experience" class="menu">Experience</a>
-                <a href="#Skills" class="menu">Skills</a>
-                <a href="#Projects" class="menu">Projects</a>
-                <a href="#Connect" class="menu">Connect</a>
+                <a href="#about" class="menu">About</a>
+                <a href="#experience" class="menu">Experience</a>
+                <a href="#skills" class="menu">Skills</a>
+                <a href="#projects" class="menu">Projects</a>
+                <a href="#connect" class="menu">Connect</a>
+                <a href="#leaveMessage" class="menu">Message</a>
+
     </nav> 
-    <section id = "About">
+    <section id="about">
         <h2 class="heading">About</h2>
         <p>pura vida --- compassion, curiousity, and creativity. 
         <br>
         <br>i enjoy every chance i can to explore opportunities to practice and grow. from making a meal from scratch to tinkering with diy home repair, it's exciting to focus on practice, learning, and application. i'm hopeful to work on projects that can uplift community needs and creaate spaces to relax together. with everything going on, rest in central in sustaining every step forward!</p>
     </section>
-    <section id = "Experience">
+    <section id="experience">
         <h2 class="heading">Experience</h2>
         <ul class="experience-list">
             <li>editing neopets petpages in the early 2000s</li>
@@ -45,16 +46,16 @@
             <li>working with grassroot orgs, nonprofits, and businesses in relationship with fortune 500 companies</li>
         </ul>
     </section>
-    <section id = "Skills">
+    <section id="skills">
         <h2 class="heading">Skills</h2>
         <ul class ="skills-list"></ul>
     </section>    
-    <section id = "Projects">
+    <section id="projects">
         <h2 class="heading">Projects</h2>
         <ul><!--empty on purpose--></ul>
             <!--will update more in future lesson-->
     </section>
-    <section id = "Connect">
+    <section id="connect">
         <h2 class="heading">Connect</h2>
         <div class="connect-links">
         <a href = "https://www.instagram.com/chocoflanclub/" class="menu"><img src="https://img.icons8.com/?size=75&id=42818&format=png&color=000000" alt="colorful instagram logo linking to my only flans club - fun and fundraisers"></a>
@@ -62,6 +63,33 @@
         <a href = "https://www.linkedin.com/in/daniela-hern%C3%A1ndez-blanco-22326498/" class="menu"><img src="https://img.icons8.com/?size=75&id=42823&format=png&color=000000" alt="cute linkedin logo to invite you to connect with me on linkedin!"></a>
         </div>
     </section>
+    <section id="leaveMessage">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            <label>
+                Name <br><input type="text" name="usersName" required>
+            </label>
+            
+            <label> <br>
+                Email  <br><input type="email" name="usersEmail" required>
+           </label>
+           <label> <br>
+                Message <br><textarea name="usersMessage" required></textarea>
+            </label>
+                 <br><button type="submit">Submit</button>
+           
+        </form>
+    </section>
+    <section id="messages">
+        <h2>Messages</h2>
+        <div id="terminal">
+            <ul>
+
+            </ul>
+        </div>
+    </section>
+    <footer>
+    </footer>
     <script src="js/index.js"></script>
 </body>
 </html>
