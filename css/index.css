@@ -141,6 +141,15 @@ a:active {
 
 }
 
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+}
+
 li {
     list-style-type: square;
 }
@@ -154,6 +163,14 @@ li {
 }
 
 .skills-list li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 250px;
+}
+
+.projects-list li {
     list-style: none;
     background-color: #F8E8D0;
     border: 2px dotted #a7886d;

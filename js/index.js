@@ -79,3 +79,41 @@ messageForm.addEventListener('submit',function(event){
 })
 
 
+// fetch('https://api.github.com/users/dhblanco/repos')
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch(error => console.error(error))
+
+async function fetchRepos() {
+  const url = 'https://api.github.com/users/dhblanco/repos';
+
+  try {
+    let response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    let data = await response.json();
+    console.log(data);
+
+    let projectList = document.querySelector('#projects ul')
+    
+ //   data.forEach(element => {
+ //       let project = document.createElement('li')
+ //       project.innerHTML = element.name
+ //       projectList.appendChild(project) 
+ //   });
+
+    for (let i = 0; i < data.length; i++) {
+       let project = document.createElement('li')
+       project.innerHTML = `<a target='_blank' href='${data[i].html_url}'>${data[i].name}</a>`
+       projectList.appendChild(project) 
+    }
+
+  } catch (error) {
+    console.error('An error occured', error);
+  }
+}
+
+fetchRepos()
+
