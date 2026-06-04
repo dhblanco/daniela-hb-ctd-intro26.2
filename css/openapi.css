@@ -33,6 +33,18 @@ nav {
     color: #F8E8D0;
 }
 
+
+h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    color: #A65E2E;
+}
+
+.heading {
+        color: #A65E2E;
+        font-weight: bold;
+}
+
 a:focus {
   font-style: italic;
 }

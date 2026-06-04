@@ -12,6 +12,6 @@ fetch("https://v3.football.api-sports.io/leagues", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 
-  fetch("/leagues")
+fetch("https://v3.football.api-sports.io/teams?league=1&season=2022")
 
-  fetch ("/teams")
+fetch("https://v3.football.api-sports.io/teams?league=1&season=2014")

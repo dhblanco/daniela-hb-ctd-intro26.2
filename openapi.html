@@ -4,7 +4,11 @@
     <meta name='description' content='Open API Soccer leagues list'>
     <meta name='author' content='Daniela Hernández Blanco'>
     <!--add meta tags later-->
-    <link rel="stylesheet" href="css/openapi.css"> 
+    <link rel="stylesheet" href="css/openapi.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+     
     <title>Open API - Soccer</title>        
 </head>
 <body>
@@ -12,8 +16,16 @@
         <a href="/index.html" class="menu">Return to Portfolio</a>
     </nav>
     <main>
-        <section id='api-results'><ul id='leagues'></ul></section>
-        <section id='api-results'><ul id='teams'></ul></section>
+        <section class='api-results'>
+            <h2 class="heading">Leagues</h2>
+                <button>Show Leagues</button>
+                <ul id='leagues'></ul>
+            </section>
+        <section class='api-results'>
+            <h2 class="heading">Teams</h2>
+                <button>Show Teams</button>
+                <ul id='teams'></ul>
+        </section>
     </main>
     <script src="js/openapi.js"></script>
 </body>
