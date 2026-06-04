@@ -11,3 +11,7 @@ fetch("https://v3.football.api-sports.io/leagues", requestOptions)
   .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+
+  fetch("/leagues")
+
+  fetch ("/teams")

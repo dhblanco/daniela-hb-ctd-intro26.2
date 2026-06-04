@@ -46,3 +46,23 @@ a:active {
   background: #D18B47;
   color: #FFF7E6;
 }
+
+section {
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #FFF7E6;  
+    scroll-margin-top: 30px;
+}
+
+.api-results li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 250px;
+}
+
+footer {
+    text-align: center;
+
+}
