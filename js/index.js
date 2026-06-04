@@ -19,10 +19,12 @@ let skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 // AIRHUB suggests to get the skills and messages section by its ID first
 let skillsSection = document.getElementById("skills"); 
 let messageSection = document.getElementById("messages")
+let projectSection = document.getElementById('projects')
 
 // Then query the <ul> from the section variables
 let skillsList = skillsSection.querySelector('ul');
 let messageList = messageSection.querySelector('ul'); 
+let projectList = projectSection.querySelector('ul')
 
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement("li");
@@ -86,13 +88,11 @@ fetch('https://api.github.com/users/dhblanco/repos')
     }
         return response.json()
     })
-    .then(data => {
-        console.log(data)
-        let projectSection = document.getElementById('projects')
-        let projectList = projectSection.querySelector('ul')
-        for (let i = 0; i < data.length; i++) {
+    .then(repositories => {
+        console.log(repositories)
+        for (let i = 0; i < repositories.length; i++) {
             let project = document.createElement('li')
-            project.innerHTML = `<a target='_blank' href='${data[i].html_url}'>${data[i].name}</a>`
+            project.innerHTML = `<a target='_blank' href='${repositories[i].html_url}'>${repositories[i].name}</a>`
             projectList.appendChild(project) 
             }
     })
@@ -100,5 +100,3 @@ fetch('https://api.github.com/users/dhblanco/repos')
         projectSection.innerText = 'Failed to load projects'
         console.error('An error occured', error);
     })
-
-    fetch()
