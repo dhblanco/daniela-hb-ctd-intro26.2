@@ -21,11 +21,6 @@ let teamsList = document.getElementById("teams")
   //CREATE LI ELEMENTS
   //APPEND TO UL "leagues" "teams"
 
-  // fetch("https://v3.football.api-sports.io/leagues", requestOptions)
-  // .then(response => response.json())
-  // .then(result => console.log(result))
-  // .catch(error => console.log('error', error));
-
   async function fetchRepos() {
     try {
         let response = await fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
@@ -40,6 +35,8 @@ let teamsList = document.getElementById("teams")
           const element = data.response[i]["team"].name;
           console.log(element)
           let name = document.createElement('li')
+          name.innerText = element
+          teamsList.appendChild(name)
         }
     } catch (error) {
         console.error('An eeror occurred',error)
@@ -48,7 +45,12 @@ let teamsList = document.getElementById("teams")
 
 fetchRepos();
 
-  // teamsButton,Button.addEventListener("click", function(){
+  // fetch("https://v3.football.api-sports.io/leagues", requestOptions)
+  // .then(response => response.json())
+  // .then(result => console.log(result))
+  // .catch(error => console.log('error', error));
+  
+  // teamsButton,Button.addEventListener("click", fetchRepos() {
   //   fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
   //   .then(response => {
   //     throw New Error (`Response status: ${response.status}`)
