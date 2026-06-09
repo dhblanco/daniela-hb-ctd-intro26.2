@@ -1,3 +1,9 @@
+// WELCOME TO MY OPEN API PROJECT FOR CTD INTRO 26.2 COURSE
+// GOAL: DISPLAY 2 DATA ENDPOINTS USING NEW GET REQUESTS WHEN USERS CLINK NAVIGATION BUTTON/LINK
+// ENDPOINTS: "TEAMS" AND "PLAYERS"
+
+// About this project: I'm learning more about soccer hoping to connect with friends and family who play, as well as my home country, Costa Rica. We didn't qualify for this year's 2026 World Cup, but we have in the past... So I wonder if, for my first endpoint (TEAMS) I can offer a visit to the past and display teams that qualified for each World Cup that we qualified for -- 2022, 2018, 2014, 2006, 2002, and 1990. I also wonder if I can offer, for my second endpoint, information about some top players, including my grandma's favorite, Keylor Navas, and 4 other players including Raquel "Rocky" Rodríguez, Shirely Cruz, Paulo Winchope, and Alonso Martinéz, from my mother's hometown. I'm not sure how to make this happen yet, but I will figure it out!
+
 const key = "005c9c26e8ecdb82edd97cdefecd5119";
 var myHeaders = new Headers();
 myHeaders.append("x-apisports-key", key);
@@ -13,14 +19,25 @@ let teamsButton = document.getElementById("teams-button")
 let leaguesList = document.getElementById("leagues")
 let teamsList = document.getElementById("teams")
 
-  //ADD EVENT LISTENERS FOR CLICKING BUTTONS
+//TO-DO: ADD EVENT LISTENERS FOR CLICKING BUTTONS, REVIEW GROUP MENTOR SESSION TO REF HOW TO SELECT FROM DROP DOWN MENU
+
+//PSEUDOCODE:
   //USER CLICKS BUTTON "leaguesButton" "teamsButton"
   //RUN FUNCTION
+  //CLEAR LIST [SEE INDEX CODE TO REF CODE TO REMOVE OBJECT]
   //FETCH API DATA
   //CONVERT TO JSON
   //HOW TO GATHER leauges.name and teams.name
   //CREATE LI ELEMENTS
   //APPEND TO UL "leagues" "teams"
+
+    let seasonYear;
+  // SEASONS TO DISPLAY DATA FROM COSTA RICA'S QUALIFYING WORLD CUPS
+  // 1990, 2002, 2006, 2014, 2018, 2022
+  // CAN I DECLARE A VARIABLE TO CHANGE AS USER REQUESTS DATA
+  // SO FOR EXAMPLE WHEN USER CLICKS BUTTON, LET SEASON = WHAT USER SELECTED MAYBE VIA A DROP DOWN MENU
+  // FETCH INFO FOR THAT 
+  // VERSUS A LINK LIKE "https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}"  
 
   async function fetchRepos() {
     try {
@@ -52,7 +69,7 @@ fetchRepos();
 
 let idNum;
 fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
-    "method": "GET";
+    "method": "GET",
     "headers": {
         "x-apisports-key": key
     }
