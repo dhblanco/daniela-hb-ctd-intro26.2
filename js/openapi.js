@@ -4,6 +4,20 @@
 
 // About this project: I'm learning more about soccer hoping to connect with friends and family who play, as well as my home country, Costa Rica. We didn't qualify for this year's 2026 World Cup, but we have in the past... So I wonder if, for my first endpoint (TEAMS) I can offer a visit to the past and display teams that qualified for each World Cup that we qualified for -- 2022, 2018, 2014, 2006, 2002, and 1990. I also wonder if I can offer, for my second endpoint, information about some top players, including my grandma's favorite, Keylor Navas, and 4 other players including Raquel "Rocky" Rodríguez, Shirely Cruz, Paulo Winchope, and Alonso Martinéz, from my mother's hometown. I'm not sure how to make this happen yet, but I will figure it out!
 
+//TO-DO: 
+// - REVIEW GROUP MENTOR SESSION TO REF HOW TO SELECT FROM DROP DOWN MENU
+// - ADD EVENT LISTENERS FOR CLICKING BUTTONS
+// - POTENTIALLY CREATE VARIABLES FOR SEASONS AND PLAYERS
+
+//PSEUDOCODE:
+  //USER CLICKS BUTTON "leaguesButton" "teamsButton"
+  //RUN FUNCTION
+  //CLEAR LIST (REMOVE OBJECT)
+  //FETCH API DATA
+  //CONVERT TO JSON
+  //CREATE LI ELEMENTS
+  //APPEND TO UL "leagues" "teams"      //MAY CHANGE THIS TO "seasons" and "player"
+
 const key = "005c9c26e8ecdb82edd97cdefecd5119";
 var myHeaders = new Headers();
 myHeaders.append("x-apisports-key", key);
@@ -19,17 +33,7 @@ let teamsButton = document.getElementById("teams-button")
 let leaguesList = document.getElementById("leagues")
 let teamsList = document.getElementById("teams")
 
-//TO-DO: ADD EVENT LISTENERS FOR CLICKING BUTTONS, REVIEW GROUP MENTOR SESSION TO REF HOW TO SELECT FROM DROP DOWN MENU
 
-//PSEUDOCODE:
-  //USER CLICKS BUTTON "leaguesButton" "teamsButton"
-  //RUN FUNCTION
-  //CLEAR LIST [SEE INDEX CODE TO REF CODE TO REMOVE OBJECT]
-  //FETCH API DATA
-  //CONVERT TO JSON
-  //HOW TO GATHER leauges.name and teams.name
-  //CREATE LI ELEMENTS
-  //APPEND TO UL "leagues" "teams"
 
     let seasonYear;
   // SEASONS TO DISPLAY DATA FROM COSTA RICA'S QUALIFYING WORLD CUPS
