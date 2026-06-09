@@ -4,12 +4,20 @@
 
 // About this project: I'm learning more about soccer hoping to connect with friends and family who play, as well as my home country, Costa Rica. We didn't qualify for this year's 2026 World Cup, but we have in the past... So I wonder if, for my first endpoint (TEAMS) I can offer a visit to the past and display teams that qualified for each World Cup that we qualified for -- 2022, 2018, 2014, 2006, 2002, and 1990. I also wonder if I can offer, for my second endpoint, information about some top players, including my grandma's favorite, Keylor Navas, and 4 other players including Raquel "Rocky" Rodríguez, Shirely Cruz, Paulo Winchope, and Alonso Martinéz, from my mother's hometown. I'm not sure how to make this happen yet, but I will figure it out!
 
+// IDEAS:
+// - USERS CAN SELECT A YEAR FROM THE DROP DOWN MENU
+// - FIRST ENDPOINT: USERS CAN THEN CLICK A BUTTON TO SHOW QUALIFYING WORLD CUP TEAMS FOR THAT YEAR
+// - SECOND ENDPOINT: USERS CAN SELECT A BUTTON TO DISPLAY PLAYERS FOR THE COSTA RICAN TEAM THAT YEAR
+// - ALT: USERS CAN SELECT PLAYERS FROM A DROP DOWN MENU
+// - ALT SECOND ENDPOINT: USERS CAN CLICK A BUTTON TO DISPLAY PLAYER INFORMATION
+
 //TO-DO: 
-// - REVIEW GROUP MENTOR SESSION TO REF HOW TO SELECT FROM DROP DOWN MENU
+// - REVIEW GROUP MENTOR SESSION TO REF HOW TO CREATE/SELECT FROM DROP DOWN MENU
 // - ADD EVENT LISTENERS FOR CLICKING BUTTONS
 // - POTENTIALLY CREATE VARIABLES FOR SEASONS AND PLAYERS
 
 //PSEUDOCODE:
+  //USER SELECTS YEAR/PLAYER FROM DROP DOWN BUTTON
   //USER CLICKS BUTTON "leaguesButton" "teamsButton"
   //RUN FUNCTION
   //CLEAR LIST (REMOVE OBJECT)
@@ -72,6 +80,8 @@ fetchRepos();
 // CODE BELOW - REQUEST SAMPLE FROM API-SPORTS.IO
 
 let idNum;
+// NEXT STEP
+// - ADD A WAY TO CHANGE THE idNum WHEN USER SELECTS DROPDOWN?
 fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
     "method": "GET",
     "headers": {
