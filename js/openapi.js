@@ -18,6 +18,7 @@
 
 //PSEUDOCODE:
   //USER SELECTS YEAR/PLAYER FROM DROP DOWN BUTTON
+  //THIS RE/ASSIGNS VALUE TO THE SELECTED VARIABLE "SEASON" OR "ID"
   //USER CLICKS BUTTON "leaguesButton" "teamsButton"
   //RUN FUNCTION
   //CLEAR LIST (REMOVE OBJECT)
@@ -43,7 +44,7 @@ let teamsList = document.getElementById("teams")
 
 
 
-    let seasonYear;
+let seasonYear = document.getElementsByName("season-year")
   // SEASONS TO DISPLAY DATA FROM COSTA RICA'S QUALIFYING WORLD CUPS
   // 1990, 2002, 2006, 2014, 2018, 2022
   // CAN I DECLARE A VARIABLE TO CHANGE AS USER REQUESTS DATA
@@ -73,7 +74,8 @@ let teamsList = document.getElementById("teams")
     }
 }
 
-fetchRepos();
+leagueButton,Button.addEventlistener("click", fetchRepos())
+console.log(leagueButton);
 
 // SECOND ENDPOINT - PLAYER INFO
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY

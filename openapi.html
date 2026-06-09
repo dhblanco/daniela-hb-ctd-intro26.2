@@ -16,16 +16,27 @@
         <a href="index.html" class="menu">Return to Portfolio</a>
     </nav>
     <main>
-        <section class='api-results'>
-            <h2 class="heading">Leagues</h2>
-                <button id="leagues-button">Show Leagues</button>
-                <ul id='leagues'></ul>
+        <h1>Open API Project -- Costa Rica at the World Cup</h1>
+        <p>Since we're missing this year's World Cup, let's check out some top players and lineups from Costa Rica's appearances at previous World Cups.</p>
+        <form>
+            <select name="season-year">
+                <option value="1990">1990</option>
+                <option value="2002">2002</option>
+                <option value="2006">2006</option>
+                <option value="2014">2014</option>
+                <option value="2022">2022</option>
+            </select>
+            <section class='api-results'>
+                <h2 class="heading">Leagues</h2>
+                    <button id="leagues-button">Show Leagues</button>
+                    <ul id='leagues'></ul>
+                </section>
+            <section class='api-results'>
+                <h2 class="heading">Teams</h2>
+                    <button id="teams-button">Show Teams</button>
+                    <ul id='teams'></ul>
             </section>
-        <section class='api-results'>
-            <h2 class="heading">Teams</h2>
-                <button id="teams-button">Show Teams</button>
-                <ul id='teams'></ul>
-        </section>
+        </form>
     </main>
     <script src="js/openapi.js"></script>
 </body>
