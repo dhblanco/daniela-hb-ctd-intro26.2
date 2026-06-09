@@ -1,5 +1,6 @@
+const key = "005c9c26e8ecdb82edd97cdefecd5119";
 var myHeaders = new Headers();
-myHeaders.append("x-apisports-key", "005c9c26e8ecdb82edd97cdefecd5119");
+myHeaders.append("x-apisports-key", key);
 
 var requestOptions = {
   method: 'GET',
@@ -45,10 +46,23 @@ let teamsList = document.getElementById("teams")
 
 fetchRepos();
 
-  // fetch("https://v3.football.api-sports.io/leagues", requestOptions)
-  // .then(response => response.json())
-  // .then(result => console.log(result))
-  // .catch(error => console.log('error', error));
+// SECOND ENDPOINT - PLAYER INFO
+// IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
+// CODE BELOW - REQUEST SAMPLE FROM API-SPORTS.IO
+
+let idNum;
+fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
+    "method": "GET";
+    "headers": {
+        "x-apisports-key": key
+    }
+ })
+ .then(response => {
+    console.log(response);
+ })
+ .catch(err => {
+    console.log(err);
+ })
   
   // teamsButton,Button.addEventListener("click", fetchRepos() {
   //   fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
