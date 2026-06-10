@@ -12,8 +12,7 @@
 // - ALT SECOND ENDPOINT: USERS CAN CLICK A BUTTON TO DISPLAY PLAYER INFORMATION
 
 //TO-DO: 
-// - REVIEW GROUP MENTOR SESSION TO REF HOW TO CREATE/SELECT FROM DROP DOWN MENU
-// - ADD EVENT LISTENERS FOR CLICKING BUTTONS
+
 // - POTENTIALLY CREATE VARIABLES FOR SEASONS AND PLAYERS
 
 //PSEUDOCODE:
@@ -39,7 +38,6 @@ var requestOptions = {
 
 let seasonYears = document.getElementById("season-year")
 let seasonYear = seasonYears.value
-console.log(seasonYears)     
 seasonYears.addEventListener('change',function(event) {
     seasonYear = seasonYears.value
 })
@@ -47,7 +45,7 @@ seasonYears.addEventListener('change',function(event) {
 // FIRST ENDPOINT: GATHER TEAM NAMES FROM SELECTED WORLD CUPS
 let teamsList = document.getElementById("teams")
 
-async function fetchRepos() {
+async function fetchTeams() {
     console.log("button clicked")
     console.log(`Fetching data from ${seasonYear}`)
     let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
@@ -81,14 +79,54 @@ async function fetchRepos() {
 }
 let teamsButton = document.getElementById("teams-button")
 console.log(teamsButton);
-teamsButton.addEventListener("click", fetchRepos)
+teamsButton.addEventListener("click", fetchTeams)
 
-let leagueButton = document.getElementById("leagues-button")
+
+
+// SECOND ENDPOINT: GATHER LEAGUE NAMES THAT A TEAM HAS PLAYED FOR 
+let idCountry = "29" // TEAM ID FOR COSTA RICA
+let urlLeagues = `https://v3.football.api-sports.io/teams/seasons?team=${idCountry}`
 let leaguesList = document.getElementById("leagues")
 
+async function fetchLeagues() {
+    console.log("button clicked")
+    console.log(urlLeagues)
 
-// SECOND ENDPOINT - PLAYER INFO
+    try {
+        let response = await fetch("https://v3.football.api-sports.io/leagues?code=CR", requestOptions)
+        
+        if(!response.ok){
+            throw new Error(response.status);
+        }
+
+        let data = await response.json()
+        console.log(data);
+        
+        if(data.errors.plan){
+            throw new Error(data.errors.plan);
+        } else {
+        leaguesList.innerHTML = "";
+        for (let i = 0; i < data.response.length; i++) {
+          const element = data.response[i]["league"].name;
+          console.log(element)
+          let name = document.createElement('li')
+          name.innerText = element
+          leaguesList.appendChild(name)
+        }}
+    } catch (error) {
+        console.error('An error occurred:',error)
+        leaguesList.innerHTML = "";
+        leaguesList.innerText = error
+    }
+}
+
+let leagueButton = document.getElementById("leagues-button")
+console.log(leagueButton);
+leagueButton.addEventListener("click", fetchLeagues)
+
+// ANOTHER ENDPOINT - PLAYER INFO
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
+let idNavas = "731" // PLAYER ID FOR KEYLOR
 // CODE BELOW - REQUEST SAMPLE FROM API-SPORTS.IO
 // FIRST DO THE FIRST ENDPOINT
 // let idNum;

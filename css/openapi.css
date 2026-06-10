@@ -66,12 +66,23 @@ section {
     scroll-margin-top: 30px;
 }
 
-.api-results li {
+.teams-list {
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+.teams-list, li {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     background-color: #F8E8D0;
     border: 2px dotted #a7886d;
     padding: 8px;
     flex: 1 1 250px;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
 }
 
 footer {
