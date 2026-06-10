@@ -134,7 +134,7 @@ hideLeaguesButton.addEventListener("click", function(){
 })
 
 let hideTeamsButton = document.getElementById("teams-hide")
-hideLeaguesButton.addEventListener("click", function(){
+hideTeamsButton.addEventListener("click", function(){
     console.log("hide teams button clicked")
             teamsList.innerHTML = "";
 })
