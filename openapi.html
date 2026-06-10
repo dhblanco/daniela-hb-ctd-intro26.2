@@ -18,8 +18,9 @@
     <main>
         <h1>Open API Project -- Costa Rica at the World Cup</h1>
         <p>Since we're missing this year's World Cup, let's check out some top players and lineups from Costa Rica's appearances at previous World Cups.</p>
+        <p><em>Please note historial World Cup data (pre-2022) requires a paid API plan.</em></p>
         <form>
-            <label for="season-year">Choose a World Cup year:</label>
+            <label for="season-year">Choose from a World Cup year Costa Rica qualified:</label>
             <select name="season-year" id="season-year">
                 <option value="1990">1990</option>
                 <option value="2002">2002</option>
@@ -28,15 +29,15 @@
                 <option value="2022">2022</option>
             </select>
             <section class='api-results'>
-                <h2 class="heading">Leagues</h2>
-                    <button id="leagues-button">Show Leagues</button>
-                    <ul id='leagues'></ul>
-                </section>
-            <section class='api-results'>
-                <h2 class="heading">Teams</h2>
-                    <button id="teams-button">Show Teams</button>
+                <h2 class="heading">Who joined Costa Rica as Finalists that year?</h2>
+                    <button id="teams-button" type="button">Show Teams</button>
                     <ul id='teams'></ul>
             </section>
+            <section class='api-results'>
+                <h2 class="heading">Leagues</h2>
+                    <button id="leagues-button" type="button">Show Leagues</button>
+                    <ul id='leagues'></ul>
+                </section>
         </form>
     </main>
     <script src="js/openapi.js"></script>

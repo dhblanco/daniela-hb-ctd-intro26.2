@@ -40,45 +40,52 @@ var requestOptions = {
 let seasonYears = document.getElementById("season-year")
 let seasonYear = seasonYears.value
 console.log(seasonYears)     
-// DEFAULT SEASON YEAR IS 1990 UNLESS USERS CHANGE VALUE
 seasonYears.addEventListener('change',function(event) {
     seasonYear = seasonYears.value
 })
 
 // FIRST ENDPOINT: GATHER TEAM NAMES FROM SELECTED WORLD CUPS
 let teamsList = document.getElementById("teams")
+
 async function fetchRepos() {
     console.log("button clicked")
-    console.log(seasonYear)
-
-    event.preventDefault();
+    console.log(`Fetching data from ${seasonYear}`)
+    let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
+    console.log(urlSeason)
 
     try {
-        let response = await fetch(`https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`, requestOptions)
+        let response = await fetch(urlSeason, requestOptions)
         
         if(!response.ok){
             throw new Error(response.status);
         }
 
         let data = await response.json()
-        console.log(data.response)
+        
+        if(data.errors.plan){
+            throw new Error(data.errors.plan);
+        } else {
+        teamsList.innerHTML = "";
         for (let i = 0; i < data.response.length; i++) {
           const element = data.response[i]["team"].name;
           console.log(element)
           let name = document.createElement('li')
           name.innerText = element
           teamsList.appendChild(name)
-        }
+        }}
     } catch (error) {
-        console.error('An eeror occurred',error)
+        console.error('An error occurred:',error)
+        teamsList.innerHTML = "";
+        teamsList.innerText = error
     }
 }
-fetchRepos
-let leagueButton = document.getElementById("leagues-button")
 let teamsButton = document.getElementById("teams-button")
+console.log(teamsButton);
+teamsButton.addEventListener("click", fetchRepos)
+
+let leagueButton = document.getElementById("leagues-button")
 let leaguesList = document.getElementById("leagues")
-console.log(leagueButton);
-leagueButton.addEventListener("click", fetchRepos)
+
 
 // SECOND ENDPOINT - PLAYER INFO
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
