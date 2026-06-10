@@ -3,7 +3,8 @@
 <head>
     <meta name='description' content='Open API Soccer leagues list'>
     <meta name='author' content='Daniela Hernández Blanco'>
-    <!--add meta tags later-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/openapi.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,32 +18,44 @@
     </nav>
     <main>
         <h1>Open API Project: Football -- Costa Rica at Home and the World Cup</h1>
-        <p>Since we're missing this year's World Cup, let's check out previous finalists joining Costa Rica's appearances at previous World Cup and learn about local competitions hosted in "Tiquicia."</p>
-        <p><em>Please note historial World Cup data (pre-2022) requires a paid API plan.</em></p>
-        <form>
-            <label for="season-year">Choose from a World Cup year Costa Rica qualified:</label>
-            <select name="season-year" id="season-year">
-                <option value="1990">1990</option>
-                <option value="2002">2002</option>
-                <option value="2006">2006</option>
-                <option value="2014">2014</option>
-                <option value="2022">2022</option>
-            </select>
-            <section class='api-results'>
-                <h2 class="heading">Who joined Costa Rica as Finalists that year?</h2>
+        <p>Since we're missing this year's World Cup, let's use an Open API to check out some data about Costa Rican soccer, including information about teams Costa Rica has joined as finalists at previous World Cup as well information about some start players and local competitions hosted in "Tiquicia."</p>
+       
+        <section name="teams-section">
+            <h2 class="heading">Who joined Costa Rica as Finalists that year?</h2>
+            <p><em>Please note historial World Cup data (pre-2022) requires a paid API plan.</em></p>
+            <form>
+                <label for="season-year">Choose from a World Cup year Costa Rica qualified:</label>
+                <select name="season-year" id="season-year">
+                    <option value="1990">1990</option>
+                    <option value="2002">2002</option>
+                    <option value="2006">2006</option>
+                    <option value="2014">2014</option>
+                    <option value="2022">2022</option>
+                </select>
+                <section class='api-results'>
                     <button id="teams-button" type="button">Show Teams</button>
+                    <button id="teams-hide" type="button">Hide Teams</button>
                     <ul id='teams'></ul>
-            </section>
-            <section class='api-results'>
+                </section>
+            </form>
+        </section>
+        
+        <section class='api-results'>
                 <h2 class="heading">What local competitions does Costa Rica host?</h2>
                     <button id="leagues-button" type="button">Show Local Leagues</button>
+                    <button id="leagues-hide" type="button">Hide Local Leagues</button>
                     <ul id='leagues'></ul>
-                </section>
-        </form>
+        </section>
+
+        <section class='api-results'>
+                <h2 class="heading">Do you know any of these Costa Rican soccer stars?</h2>
+                    <button id="players-button" type="button">Show Players</button>
+                    <button id="players-hide" type="button">Hide Players</button>
+                    <ul id='players'></ul>
+        </section>
     </main>
+    <footer></footer>
     <script src="js/openapi.js"></script>
 </body>
-<footer>
-    <!--add later-->
-</footer>
+
 </html>

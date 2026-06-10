@@ -66,23 +66,24 @@ section {
     scroll-margin-top: 30px;
 }
 
-.teams-list {
+#teams,
+#leagues,
+#players {
     display: flex;
     flex-wrap: wrap;
-  
+    gap: 10px;
+    padding: 0;
 }
 
-.teams-list, li {
-    display: flex;
-    flex-wrap: wrap;
+#teams li,
+#leagues li,
+#players li {
     list-style: none;
     background-color: #F8E8D0;
     border: 2px dotted #a7886d;
     padding: 8px;
-    flex: 1 1 250px;
-    justify-content: center;
+    flex: 1 1 200px;
     text-align: center;
-    list-style: none;
 }
 
 footer {

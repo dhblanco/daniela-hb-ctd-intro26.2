@@ -113,6 +113,7 @@ async function fetchLeagues() {
           name.innerText = element
           leaguesList.appendChild(name)
         }}
+
     } catch (error) {
         console.error('An error occurred:',error)
         leaguesList.innerHTML = "";
@@ -124,52 +125,95 @@ let leagueButton = document.getElementById("leagues-button")
 console.log(leagueButton);
 leagueButton.addEventListener("click", fetchLeagues)
 
+// HIDE BUTTONS 
+
+let hideLeaguesButton = document.getElementById("leagues-hide")
+hideLeaguesButton.addEventListener("click", function(){
+    console.log("hide leauges button clicked")
+            leaguesList.innerHTML = "";
+})
+
+let hideTeamsButton = document.getElementById("teams-hide")
+hideLeaguesButton.addEventListener("click", function(){
+    console.log("hide teams button clicked")
+            teamsList.innerHTML = "";
+})
+
+let hidePlayersButton = document.getElementById("players-hide")
+hidePlayersButton.addEventListener("click", function(){
+    console.log("hide player button clicked")
+            playersList.innerHTML = "";
+})
+
 // ANOTHER ENDPOINT - PLAYER INFO
+let playersList = document.getElementById("players")
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
-let idNavas = "731" // PLAYER ID FOR KEYLOR
-// CODE BELOW - REQUEST SAMPLE FROM API-SPORTS.IO
-// FIRST DO THE FIRST ENDPOINT
-// let idNum;
-// // NEXT STEP
-// // - ADD A WAY TO CHANGE THE idNum WHEN USER SELECTS DROPDOWN?
-// fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
-//     "method": "GET",
-//     "headers": {
-//         "x-apisports-key": key
-//     }
-//  })
-//  .then(response => {
-//     console.log(response);
-//  })
-//  .catch(err => {
-//     console.log(err);
-//  })
-  
-  // teamsButton,Button.addEventListener("click", fetchRepos() {
-  //   fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
-  //   .then(response => {
-  //     throw New Error (`Response status: ${response.status}`)
-  //   }
-  //   return response.json() //?? list of team names that played in 2022 world cup
-  // })
+let idNavas = "731" // PLAYER ID FOR KEYLOR - TOP MEN'S, TOP GOALKEEPER
+let idRocky = "102215" // PLAYER ID FOR RAQUEL ROCKY RODRIGUEZ - TOP CURRENT WOMEN'S
+let idAlonso = "14020" // PLAYER ID FOR ALONSO MARTINEZ - TOP CURRENT MEN'S, FROM MOM'S HOMETOWN
+let idPlayers = [
+    idNavas, idRocky, idAlonso 
+]
 
+async function fetchPlayers() {
+    //CLEAR LIST TO PREVENT DUPLICATES
+    playersList.innerHTML = "";
 
-  //fetch('https://api.github.com/users/dhblanco/repos')
-    // .then(response => {
-        // if (!response.ok) {
-            // throw new Error(`Response status: ${response.status}`);
-    // }
-        // return response.json()
-    // })
-    // .then(repositories => {
-        // console.log(repositories)
-        // for (let i = 0; i < repositories.length; i++) {
-            // let project = document.createElement('li')
-            // project.innerHTML = `<a target='_blank' href='${repositories[i].html_url}'>${repositories[i].name}</a>`
-            // projectList.appendChild(project) 
-            // }
-    // })
-    // .catch(error => {
-        // projectSection.innerText = 'Failed to load projects'
-        // console.error('An error occured', error);
-    // })
+    try {
+          
+        for (let i = 0; i < idPlayers.length; i++) {
+           
+            let idPlayer = idPlayers[i]
+            
+            let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
+
+            console.log(urlPlayer)
+    
+            let response = await fetch(urlPlayer, requestOptions)
+            console.log(response)
+
+            if(!response.ok){
+                throw new Error(response.status);
+            }
+
+            let data = await response.json()
+            console.log(data)    
+
+            if(data.errors.endpoint){
+                throw new Error(data.errors.endpoint);
+            } else {    
+             
+            for (let i = 0; i < data.response.length; i++) {
+                
+                const firstName = data.response[i]["player"].firstname;
+                const lastName = data.response[i]["player"].lastname;
+                const age = data.response[i]["player"].age
+                const position = data.response[i]["player"].position
+                const city = data.response[i]["player"].birth.place
+                let element = `${firstName} ${lastName}<br>Age: ${age} <br>Position: ${position} <br>Birthplace: ${city}`
+                console.log(element)
+                let playerInfo = document.createElement('li')
+                playerInfo.innerHTML = element
+                playersList.appendChild(playerInfo)
+            }}
+        }
+
+        } catch (error) {
+            console.error('An error occurred:',error)
+            playersList.innerHTML = "";
+            playersList.innerText = error
+    }
+}
+
+let playersButton = document.getElementById("players-button")
+console.log(playersButton);
+playersButton.addEventListener("click", fetchPlayers)
+
+// DYNAMIC FOOTER 
+let today = new Date()
+let thisYear = today.getFullYear()
+let footer = document.querySelector('footer')
+let copyRight = document.createElement('p')
+copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
+footer.appendChild(copyRight)
+document.body.appendChild(footer)
