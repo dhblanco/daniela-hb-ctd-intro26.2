@@ -37,24 +37,24 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-let leagueButton = document.getElementById("leagues-button")
-let teamsButton = document.getElementById("teams-button")
-let leaguesList = document.getElementById("leagues")
+let seasonYears = document.getElementById("season-year")
+let seasonYear = seasonYears.value
+console.log(seasonYears)     
+// DEFAULT SEASON YEAR IS 1990 UNLESS USERS CHANGE VALUE
+seasonYears.addEventListener('change',function(event) {
+    seasonYear = seasonYears.value
+})
+
+// FIRST ENDPOINT: GATHER TEAM NAMES FROM SELECTED WORLD CUPS
 let teamsList = document.getElementById("teams")
+async function fetchRepos() {
+    console.log("button clicked")
+    console.log(seasonYear)
 
+    event.preventDefault();
 
-
-let seasonYear = document.getElementsByName("season-year")
-  // SEASONS TO DISPLAY DATA FROM COSTA RICA'S QUALIFYING WORLD CUPS
-  // 1990, 2002, 2006, 2014, 2018, 2022
-  // CAN I DECLARE A VARIABLE TO CHANGE AS USER REQUESTS DATA
-  // SO FOR EXAMPLE WHEN USER CLICKS BUTTON, LET SEASON = WHAT USER SELECTED MAYBE VIA A DROP DOWN MENU
-  // FETCH INFO FOR THAT 
-  // VERSUS A LINK LIKE "https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}"  
-
-  async function fetchRepos() {
     try {
-        let response = await fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
+        let response = await fetch(`https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`, requestOptions)
         
         if(!response.ok){
             throw new Error(response.status);
@@ -73,29 +73,32 @@ let seasonYear = document.getElementsByName("season-year")
         console.error('An eeror occurred',error)
     }
 }
-
-leagueButton,Button.addEventlistener("click", fetchRepos())
+fetchRepos
+let leagueButton = document.getElementById("leagues-button")
+let teamsButton = document.getElementById("teams-button")
+let leaguesList = document.getElementById("leagues")
 console.log(leagueButton);
+leagueButton.addEventListener("click", fetchRepos)
 
 // SECOND ENDPOINT - PLAYER INFO
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
 // CODE BELOW - REQUEST SAMPLE FROM API-SPORTS.IO
-
-let idNum;
-// NEXT STEP
-// - ADD A WAY TO CHANGE THE idNum WHEN USER SELECTS DROPDOWN?
-fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
-    "method": "GET",
-    "headers": {
-        "x-apisports-key": key
-    }
- })
- .then(response => {
-    console.log(response);
- })
- .catch(err => {
-    console.log(err);
- })
+// FIRST DO THE FIRST ENDPOINT
+// let idNum;
+// // NEXT STEP
+// // - ADD A WAY TO CHANGE THE idNum WHEN USER SELECTS DROPDOWN?
+// fetch (`https://v3.football.api-sports.io/profiles?player=${idNum}`, {
+//     "method": "GET",
+//     "headers": {
+//         "x-apisports-key": key
+//     }
+//  })
+//  .then(response => {
+//     console.log(response);
+//  })
+//  .catch(err => {
+//     console.log(err);
+//  })
   
   // teamsButton,Button.addEventListener("click", fetchRepos() {
   //   fetch("https://v3.football.api-sports.io/teams?league=1&season=2022", requestOptions)
