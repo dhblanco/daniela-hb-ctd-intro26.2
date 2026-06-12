@@ -46,7 +46,6 @@ seasonYears.addEventListener('change',function(event) {
 let teamsList = document.getElementById("teams")
 
 async function fetchTeams() {
-    console.log("button clicked")
     console.log(`Fetching data from ${seasonYear}`)
     let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
     console.log(urlSeason)
@@ -66,7 +65,6 @@ async function fetchTeams() {
         teamsList.innerHTML = "";
         for (let i = 0; i < data.response.length; i++) {
           const element = data.response[i]["team"].name;
-          console.log(element)
           let name = document.createElement('li')
           name.innerText = element
           teamsList.appendChild(name)
@@ -86,11 +84,11 @@ teamsButton.addEventListener("click", fetchTeams)
 // SECOND ENDPOINT: GATHER LEAGUE NAMES THAT A TEAM HAS PLAYED FOR 
 let idCountry = "29" // TEAM ID FOR COSTA RICA
 let urlLeagues = `https://v3.football.api-sports.io/teams/seasons?team=${idCountry}`
+console.log(urlLeagues)
 let leaguesList = document.getElementById("leagues")
 
 async function fetchLeagues() {
-    console.log("button clicked")
-    console.log(urlLeagues)
+    console.log("LEAGUE button clicked")
 
     try {
         let response = await fetch("https://v3.football.api-sports.io/leagues?code=CR", requestOptions)
@@ -108,7 +106,6 @@ async function fetchLeagues() {
         leaguesList.innerHTML = "";
         for (let i = 0; i < data.response.length; i++) {
           const element = data.response[i]["league"].name;
-          console.log(element)
           let name = document.createElement('li')
           name.innerText = element
           leaguesList.appendChild(name)
@@ -120,9 +117,7 @@ async function fetchLeagues() {
         leaguesList.innerText = error
     }
 }
-
 let leagueButton = document.getElementById("leagues-button")
-console.log(leagueButton);
 leagueButton.addEventListener("click", fetchLeagues)
 
 // HIDE BUTTONS 
@@ -150,20 +145,20 @@ let playersList = document.getElementById("players")
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
 let idNavas = "731" // PLAYER ID FOR KEYLOR - TOP MEN'S, TOP GOALKEEPER
 let idRocky = "102215" // PLAYER ID FOR RAQUEL ROCKY RODRIGUEZ - TOP CURRENT WOMEN'S
-let idAlonso = "14020" // PLAYER ID FOR ALONSO MARTINEZ - TOP CURRENT MEN'S, FROM MOM'S HOMETOWN
+let idAlonso = "14020" // PLAYER ID FOR ALONSO MARTINEZ - TOP CURRENT MEN'S, FROM MOM'S HOMETOWN I THOUGHT!
 let idPlayers = [
     idNavas, idRocky, idAlonso 
 ]
 
 async function fetchPlayers() {
-    //CLEAR LIST TO PREVENT DUPLICATES
+    //CLEAR LIST EACH FETCH TO PREVENT DUPLICATES
     playersList.innerHTML = "";
 
     try {
           
-        for (let i = 0; i < idPlayers.length; i++) {
+        for (let index = 0; index < idPlayers.length; index++) {
            
-            let idPlayer = idPlayers[i]
+            let idPlayer = idPlayers[index]
             
             let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
 
