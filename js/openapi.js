@@ -82,9 +82,6 @@ teamsButton.addEventListener("click", fetchTeams)
 
 
 // SECOND ENDPOINT: GATHER LEAGUE NAMES THAT A TEAM HAS PLAYED FOR 
-let idCountry = "29" // TEAM ID FOR COSTA RICA
-let urlLeagues = `https://v3.football.api-sports.io/teams/seasons?team=${idCountry}`
-console.log(urlLeagues)
 let leaguesList = document.getElementById("leagues")
 
 async function fetchLeagues() {
