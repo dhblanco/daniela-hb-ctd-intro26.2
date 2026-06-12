@@ -23,7 +23,6 @@ fetch('https://api.github.com/users/dhblanco/repos')
         return response.json()
     })
     .then(repositories => {
-        console.log(repositories)
         for (let i = 0; i < repositories.length; i++) {
             let project = document.createElement('li')
             project.innerHTML = `<a target='_blank' href='${repositories[i].html_url}'>${repositories[i].name}</a>`

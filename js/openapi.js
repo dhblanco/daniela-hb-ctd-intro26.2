@@ -48,7 +48,6 @@ let teamsList = document.getElementById("teams")
 async function fetchTeams() {
     console.log(`Fetching data from ${seasonYear}`)
     let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
-    console.log(urlSeason)
 
     try {
         let response = await fetch(urlSeason, requestOptions)
@@ -76,17 +75,12 @@ async function fetchTeams() {
     }
 }
 let teamsButton = document.getElementById("teams-button")
-console.log(teamsButton);
 teamsButton.addEventListener("click", fetchTeams)
-
-
 
 // SECOND ENDPOINT: GATHER LEAGUE NAMES THAT A TEAM HAS PLAYED FOR 
 let leaguesList = document.getElementById("leagues")
 
 async function fetchLeagues() {
-    console.log("LEAGUE button clicked")
-
     try {
         let response = await fetch("https://v3.football.api-sports.io/leagues?code=CR", requestOptions)
         
@@ -95,7 +89,6 @@ async function fetchLeagues() {
         }
 
         let data = await response.json()
-        console.log(data);
         
         if(data.errors.plan){
             throw new Error(data.errors.plan);
@@ -138,18 +131,14 @@ async function fetchPlayers() {
             let idPlayer = idPlayers[index]
             
             let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
-
-            console.log(urlPlayer)
     
             let response = await fetch(urlPlayer, requestOptions)
-            console.log(response)
 
             if(!response.ok){
                 throw new Error(response.status);
             }
 
             let data = await response.json()
-            console.log(data)    
 
             if(data.errors.endpoint){
                 throw new Error(data.errors.endpoint);
@@ -163,7 +152,6 @@ async function fetchPlayers() {
                 const position = data.response[i]["player"].position
                 const city = data.response[i]["player"].birth.place
                 let element = `${firstName} ${lastName}<br>Age: ${age} <br>Position: ${position} <br>Birthplace: ${city}`
-                console.log(element)
                 let playerInfo = document.createElement('li')
                 playerInfo.innerHTML = element
                 playersList.appendChild(playerInfo)
@@ -178,27 +166,23 @@ async function fetchPlayers() {
 }
 
 let playersButton = document.getElementById("players-button")
-console.log(playersButton);
 playersButton.addEventListener("click", fetchPlayers)
 
 // HIDE BUTTONS 
 
 let hideLeaguesButton = document.getElementById("leagues-hide")
 hideLeaguesButton.addEventListener("click", function(){
-    console.log("hide leauges button clicked")
-            leaguesList.innerHTML = "";
+    leaguesList.innerHTML = "";
 })
 
 let hideTeamsButton = document.getElementById("teams-hide")
 hideTeamsButton.addEventListener("click", function(){
-    console.log("hide teams button clicked")
-            teamsList.innerHTML = "";
+    teamsList.innerHTML = "";
 })
 
 let hidePlayersButton = document.getElementById("players-hide")
 hidePlayersButton.addEventListener("click", function(){
-    console.log("hide player button clicked")
-            playersList.innerHTML = "";
+    playersList.innerHTML = "";
 })
 
 // DYNAMIC FOOTER 
