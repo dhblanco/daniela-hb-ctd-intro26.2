@@ -1,0 +1,92 @@
+body {
+    background-color: #F9F3EC;  
+    color: #D18B47;             
+    font-family: sans-serif;
+    font-size: medium;
+    margin: 16px 16px 16px 16px;
+    padding: 16px;
+}
+
+nav {
+    top: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    flex-wrap: wrap;
+    font-weight: bold;
+    padding: 0px;
+    background: #A65E2E;
+    opacity: 95%;
+    z-index: 0;
+}
+
+
+.menu {    
+    padding: 8px;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #F8E8D0;
+}
+
+
+h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    color: #A65E2E;
+}
+
+.heading {
+        color: #A65E2E;
+        font-weight: bold;
+}
+
+a:focus {
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #D18B47;
+}
+
+a:active {
+  background: #D18B47;
+  color: #FFF7E6;
+}
+
+section {
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #FFF7E6;  
+    scroll-margin-top: 30px;
+}
+
+#teams,
+#leagues,
+#players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+#teams li,
+#leagues li,
+#players li {
+    list-style: none;
+    background-color: #F8E8D0;
+    border: 2px dotted #a7886d;
+    padding: 8px;
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+
+}
