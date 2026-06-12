@@ -1,6 +1,6 @@
 body {
-    background-color: #F9F3EC;  
-    color: #D18B47;    
+    background-color: #1C1C1C;  
+    color: #FFFFFF;    
     font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
@@ -19,7 +19,7 @@ nav {
     flex-wrap: wrap;
     font-weight: bold;
     padding: 0px;
-    background: #A65E2E;
+    background: #E0E0E0;
     opacity: 95%;
     z-index: 0;
 }
@@ -28,38 +28,62 @@ nav {
     padding: 8px;
     text-transform: lowercase;
     text-decoration: none;
-    color: #F8E8D0;    
+    color: #1C1C1C;
+    
+}
+
+.menu::first-letter {
+    text-decoration: underline;
 }
 
 section {
     margin: 10px auto;
     padding: 8px;
-    background-color: #FFF7E6;  
     scroll-margin-top: 30px;
-
 }
 
 h1 {
     font-family: "Space Mono", monospace;
-    color: #6B4A2E;
+    color: #deffdd;
+    text-shadow:
+        0 0 2.5px #77fa60,    /* bright neon green core */
+        0 0 5px #9cf18d,   /* slightly softer green */
+        0 0 10px #77fa60,   /* outer green halo */
+        0 0 20px #00ffff;   /* blue overlay for CRT‑style */ 
     text-align: center;
-    letter-spacing: 0.04em;
-    margin: -6px 6px;
     position: relative;
 }
 
 h2 {
     font-family: "VT323", monospace;
-    color: #A65E2E;
+    color: #FFFFFF;
 }
 
 .heading {
-        color: #A65E2E;
-        font-weight: bold;
+    color: #1C1C1C;
+    background-color: #E0E0E0;
+    letter-spacing: 0.25em;
+    text-transform: lowercase;
+    text-align: center;
 }
 
-
-
+.projects-list li a{
+    color: white;
+}
+.projects-list li a:hover {
+    color: #1C1C1C;
+    background: #E0E0E0;
+}
+.projects-list li a:hover::before{
+    content: " [ ";
+    color: #1C1C1C;
+    background: #E0E0E0;
+}
+.projects-list li a:hover::after{
+    content: " ] ";
+    color: #1C1C1C;
+    background: #E0E0E0;
+}
 
 a:focus {
   font-style: italic;
@@ -67,11 +91,11 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  background: #D18B47;
+  background: #FFFFFF;
 }
 
 a:active {
-  background: #D18B47;
+  background: #FFFFFF;
   color: #FFF7E6;
 }
 
@@ -96,7 +120,6 @@ a:active {
     flex-wrap: wrap;
     gap: 8px;
     padding: 0;
-
 }
 
 .projects-list {
@@ -112,33 +135,19 @@ li {
     list-style-type: square;
 }
 
-.experience-list li {
+.experience-list li,
+.skills-list li,
+.projects-list li
+ {
     list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
+    border: 2px dotted #A8A8A8;
     padding: 8px;
     flex: 1 1 250px;
 }
 
-.skills-list li {
-    list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
-    padding: 8px;
-    flex: 1 1 250px;
-}
-
-.projects-list li {
-    list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
-    padding: 8px;
-    flex: 1 1 250px;
-}
 
 footer {
     text-align: center;
-
 }
 
 form[name='leave_message'] input,
@@ -146,7 +155,7 @@ form[name='leave_message'] textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-
+    font-family: "Roboto Mono", monospace;         
     background: #FFF;
     border-top: 2px solid #808080;
     border-left: 2px solid #808080;
@@ -156,14 +165,12 @@ form[name='leave_message'] textarea {
 
 form[name='leave_message'] button {
     padding: 8px 16px;
-
     background: #d4d0c8;
-
+    font-family: "Roboto Mono", monospace;         
     border-top: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid #808080;
     border-bottom: 2px solid #808080;
-
     cursor: pointer;
 }
 
@@ -181,7 +188,7 @@ form[name='leave_message'] button {
     color: #ffffff;
     font-family: "Source Code Pro", monospace;
     padding: 16px;
-    border: 1px solid #F9F3EC;
+    border: 1px solid #7F7F7F;
     margin-top: 16px;
 }
 
