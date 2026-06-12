@@ -96,7 +96,7 @@ a:hover {
 
 a:active {
   background: #FFFFFF;
-  color: #FFF7E6;
+  color: #1C1C1C;
 }
 
 .connect-links  {
@@ -106,22 +106,8 @@ a:active {
     flex-wrap: wrap; 
 }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-    justify-content: center;
-    text-align: center;
-}
-
-.experience-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-}
-
+.skills-list,
+.experience-list,
 .projects-list {
     display: flex;
     flex-wrap: wrap;
