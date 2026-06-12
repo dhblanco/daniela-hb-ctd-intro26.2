@@ -75,4 +75,3 @@ let footer = document.querySelector('footer')
 let copyRight = document.createElement('p')
 copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
 footer.appendChild(copyRight)
-document.body.appendChild(footer)

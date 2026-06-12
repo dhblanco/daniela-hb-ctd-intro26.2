@@ -120,26 +120,6 @@ async function fetchLeagues() {
 let leagueButton = document.getElementById("leagues-button")
 leagueButton.addEventListener("click", fetchLeagues)
 
-// HIDE BUTTONS 
-
-let hideLeaguesButton = document.getElementById("leagues-hide")
-hideLeaguesButton.addEventListener("click", function(){
-    console.log("hide leauges button clicked")
-            leaguesList.innerHTML = "";
-})
-
-let hideTeamsButton = document.getElementById("teams-hide")
-hideTeamsButton.addEventListener("click", function(){
-    console.log("hide teams button clicked")
-            teamsList.innerHTML = "";
-})
-
-let hidePlayersButton = document.getElementById("players-hide")
-hidePlayersButton.addEventListener("click", function(){
-    console.log("hide player button clicked")
-            playersList.innerHTML = "";
-})
-
 // ANOTHER ENDPOINT - PLAYER INFO
 let playersList = document.getElementById("players")
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
@@ -204,6 +184,26 @@ let playersButton = document.getElementById("players-button")
 console.log(playersButton);
 playersButton.addEventListener("click", fetchPlayers)
 
+// HIDE BUTTONS 
+
+let hideLeaguesButton = document.getElementById("leagues-hide")
+hideLeaguesButton.addEventListener("click", function(){
+    console.log("hide leauges button clicked")
+            leaguesList.innerHTML = "";
+})
+
+let hideTeamsButton = document.getElementById("teams-hide")
+hideTeamsButton.addEventListener("click", function(){
+    console.log("hide teams button clicked")
+            teamsList.innerHTML = "";
+})
+
+let hidePlayersButton = document.getElementById("players-hide")
+hidePlayersButton.addEventListener("click", function(){
+    console.log("hide player button clicked")
+            playersList.innerHTML = "";
+})
+
 // DYNAMIC FOOTER 
 let today = new Date()
 let thisYear = today.getFullYear()
@@ -211,4 +211,3 @@ let footer = document.querySelector('footer')
 let copyRight = document.createElement('p')
 copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
 footer.appendChild(copyRight)
-document.body.appendChild(footer)
