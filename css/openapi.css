@@ -1,8 +1,7 @@
 body {
     background-color: #F9F3EC;  
     color: #D18B47;             
-    font-family: sans-serif;
-    font-size: medium;
+    font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
 }
@@ -25,7 +24,6 @@ nav {
     z-index: 0;
 }
 
-
 .menu {    
     padding: 8px;
     text-transform: lowercase;
@@ -33,10 +31,13 @@ nav {
     color: #F8E8D0;
 }
 
+h1 {
+    font-family: "Space Mono", monospace;
+}
+
 
 h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 30px;
+    font-family: "VT323", monospace;
     color: #A65E2E;
 }
 

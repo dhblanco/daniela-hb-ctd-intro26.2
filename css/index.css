@@ -1,66 +1,10 @@
-/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD
-
-* {
-  outline: 2px solid #6B4A2E;
-}
-BUT FOR NOW LET'S SEE WHAT WE HAVE! */
-
-
-
 body {
     background-color: #F9F3EC;  
-    color: #D18B47;             
-    font-family: sans-serif;
-    font-size: medium;
+    color: #D18B47;    
+    font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
-
 }
-
-
-.great-vibes-regular {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-section {
-    margin: 10px auto;
-    padding: 8px;
-    background-color: #FFF7E6;  
-    scroll-margin-top: 30px;
-
-}
-
-h1 {
-    font-family: "Pacifico", serif;
-    color: #6B4A2E;
-    font-size: 40px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    margin: -6px 6px;
-    position: relative;
-
-}
-
-.hero {
-    position: relative;
-        top: -20px;
-}
-
-.drip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -42px auto;
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 0.65;
-    z-index: 1;
-    pointer-events: none;
-}
-
 
 nav {
     top: 0;
@@ -78,12 +22,34 @@ nav {
     background: #A65E2E;
     opacity: 95%;
     z-index: 0;
+}
+
+.menu {    
+    padding: 8px;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #F8E8D0;    
+}
+
+section {
+    margin: 10px auto;
+    padding: 8px;
+    background-color: #FFF7E6;  
+    scroll-margin-top: 30px;
 
 }
 
+h1 {
+    font-family: "Space Mono", monospace;
+    color: #6B4A2E;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin: -6px 6px;
+    position: relative;
+}
+
 h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 30px;
+    font-family: "VT323", monospace;
     color: #A65E2E;
 }
 
@@ -93,15 +59,7 @@ h2 {
 }
 
 
-.menu {
-    
-    padding: 8px;
-    text-transform: lowercase;
-    text-decoration: none;
-    color: #F8E8D0;
 
-    
-}
 
 a:focus {
   font-style: italic;
