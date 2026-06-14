@@ -50,6 +50,8 @@ async function fetchTeams() {
     let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
 
     try {
+        teamsList.innerHTML = "[ DATA LOADING ... ]";
+
         let response = await fetch(urlSeason, requestOptions)
         
         if(!response.ok){
@@ -57,7 +59,7 @@ async function fetchTeams() {
         }
 
         let data = await response.json()
-        
+
         if(data.errors.plan){
             throw new Error(data.errors.plan);
         } else {
@@ -82,6 +84,8 @@ let leaguesList = document.getElementById("leagues")
 
 async function fetchLeagues() {
     try {
+        leaguesList.innerHTML = "[ DATA LOADING ... ]";
+
         let response = await fetch("https://v3.football.api-sports.io/leagues?code=CR", requestOptions)
         
         if(!response.ok){
@@ -89,7 +93,7 @@ async function fetchLeagues() {
         }
 
         let data = await response.json()
-        
+
         if(data.errors.plan){
             throw new Error(data.errors.plan);
         } else {
@@ -123,11 +127,17 @@ let idPlayers = [
 async function fetchPlayers() {
     //CLEAR LIST EACH FETCH TO PREVENT DUPLICATES
     playersList.innerHTML = "";
+    //CREATE LOADING MESSAGE
+    let playerInfoStatus = document.getElementById('player-info')
+    playerInfoStatus.innerText = "[ DATA LOADING ... ]";
+    console.log(playerInfoStatus.innerText)
 
     try {
-          
         for (let index = 0; index < idPlayers.length; index++) {
-           
+            
+            playerInfoStatus.innerText = ""
+             console.log(playerInfoStatus.innerText)
+
             let idPlayer = idPlayers[index]
             
             let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
@@ -139,6 +149,7 @@ async function fetchPlayers() {
             }
 
             let data = await response.json()
+
 
             if(data.errors.endpoint){
                 throw new Error(data.errors.endpoint);

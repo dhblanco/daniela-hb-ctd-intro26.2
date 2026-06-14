@@ -175,6 +175,8 @@ form[name='leave_message'] button {
     font-family: "Source Code Pro", monospace;
     padding: 16px;
     border: 1px solid #7F7F7F;
+    border-radius: 8px;
+
     margin-top: 16px;
 }
 
