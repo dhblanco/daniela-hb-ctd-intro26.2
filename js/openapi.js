@@ -135,9 +135,6 @@ async function fetchPlayers() {
     try {
         for (let index = 0; index < idPlayers.length; index++) {
             
-            playerInfoStatus.innerText = ""
-             console.log(playerInfoStatus.innerText)
-
             let idPlayer = idPlayers[index]
             
             let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
@@ -168,6 +165,9 @@ async function fetchPlayers() {
                 playersList.appendChild(playerInfo)
             }}
         }
+
+        playerInfoStatus.innerText = ""
+             console.log(playerInfoStatus.innerText)
 
         } catch (error) {
             console.error('An error occurred:',error)

@@ -7,7 +7,7 @@ let messageList = messageSection.querySelector('ul');
 let projectList = projectSection.querySelector('ul')
 
 //DYNAMIC SKILLS SECTION
-let skills = ["JavaScript", "HTML", "CSS", "API Requests", "DOM Manipulation", "GitHub", "GitBash"];
+let skills = ["JavaScript", "HTML", "CSS", "API Requests", "DOM Manipulation", "Git / GitHub", "Avid Learner"];
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement("li");
     skill.innerText = skills[i]; // Use innerText for plain text
@@ -36,6 +36,7 @@ fetch('https://api.github.com/users/dhblanco/repos')
 
 //FORM SECTION
 let messageForm = document.querySelector('form[name="leave_message"]')
+
 messageForm.addEventListener('submit',function(event){
     event.preventDefault();
     let name = event.target.usersName.value
@@ -43,7 +44,7 @@ messageForm.addEventListener('submit',function(event){
     let message = event.target.usersMessage.value
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage);
-    newMessage.innerHTML = `$ git commit --author="<a href='mailto:${email}'>${name}</a>" -m "<span>${message}</span>" `
+    newMessage.innerHTML = `$ git commit --author="<a href='mailto:${email}'>${name}</a>" -m "<span id='msg-span'>${message}</span>" `
 
     //EDIT SUBMITTED MESSAGES USING BUTTON
     let removeButton = document.createElement("button")
@@ -54,7 +55,22 @@ messageForm.addEventListener('submit',function(event){
         let entry = removeButton.parentNode
         entry.remove()
     })
-    messageForm.reset()
+    let editButton = document.createElement("button")
+    editButton.setAttribute('type', 'button')
+    editButton.innerText = "edit message"
+    newMessage.appendChild(editButton)
+    editButton.addEventListener('click',function(){
+        let msgSpan = newMessage.querySelector("#msg-span")
+        let msg = prompt("Enter new message")
+        msg
+        if (msg === null) {
+            return;
+        } else {
+            msgSpan.innerText = msg
+        }
+    })
+
+ messageForm.reset()
 })
 
     // FUTURE PERSONAL GOALS: Edit newMessage to better emulate terminal style messges
