@@ -44,7 +44,10 @@ messageForm.addEventListener('submit',function(event){
     let message = event.target.usersMessage.value
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage);
-    newMessage.innerHTML = `$ git commit --author="<a href='mailto:${email}'>${name}</a>" -m "<span id='msg-span'>${message}</span>" `
+    newMessage.innerHTML =
+`~ NAME:    ${name}
+~ EMAIL:    <a href='mailto:${email}'>${email}</a>
+~ MESSAGE:  <span id='msg-span'>${message}</span>        `
 
     //EDIT SUBMITTED MESSAGES USING BUTTON
     let removeButton = document.createElement("button")

@@ -181,7 +181,7 @@ form[name='leave_message'] button {
 }
 
 #terminal::before {
-    content: "$ git add guestbook.md";
+    content: "$ cat guestbook.md";
     display: block;
     color: #ffffff;
     margin-bottom: 8px;
