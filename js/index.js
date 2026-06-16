@@ -45,9 +45,12 @@ messageForm.addEventListener('submit',function(event){
     let newMessage = document.createElement('li');
     messageList.appendChild(newMessage);
     newMessage.innerHTML =
-`~ NAME:    ${name}
-~ EMAIL:    <a href='mailto:${email}'>${email}</a>
-~ MESSAGE:  <span id='msg-span'>${message}</span>        `
+`---------------------------------
+${name}
+<a href='mailto:${email}'>${email}</a>
+<span id='msg-span'>${message}</span>
+---------------------------------
+        `
 
     //EDIT SUBMITTED MESSAGES USING BUTTON
     let removeButton = document.createElement("button")
@@ -86,6 +89,18 @@ messageForm.addEventListener('submit',function(event){
     //  - create a new element to simulate a terminal entry
     //  > > for example: `$ git config user.email <br> ${email}`
 
+//TOGGLE BUTTON FOR DARK / LIGHT MODE
+let toggleButton = document.getElementById("toggle-button")
+toggleButton.innerText = "change background theme ◐"
+toggleButton.addEventListener('click', function(){
+    document.body.classList.toggle("light-mode")
+    if (document.body.classList.contains("light-mode")) {
+        toggleButton.innerText = "change background theme ◑"
+    } else {
+        toggleButton.innerText = "change background theme ◐"
+    }
+})
+    
 // DYNAMIC FOOTER
 let today = new Date()
 let thisYear = today.getFullYear()

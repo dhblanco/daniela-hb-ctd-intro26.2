@@ -1,9 +1,32 @@
 body {
     background-color: #1C1C1C;  
-    color: #FFFFFF;    
+    color: #E0E0E0;    
     font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
+}
+
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #1C1C1C
+}
+
+#toggle-button {
+    position: absolute;
+    z-index: 999;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #d4d0c8;
+    font-family: "Roboto Mono", monospace;         
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
 }
 
 nav {
@@ -44,7 +67,7 @@ section {
 
 h1 {
     font-family: "Space Mono", monospace;
-    color: #deffdd;
+    color: #E0E0E0;
     text-shadow:
         0 0 2.5px #77fa60,    /* bright neon green core */
         0 0 5px #9cf18d,   /* slightly softer green */
@@ -52,11 +75,15 @@ h1 {
         0 0 20px #00ffff;   /* blue overlay for CRT‑style */ 
     text-align: center;
     position: relative;
+    background-color: #1a1410;
+    padding: 16px;
+    border: 1px solid #7F7F7F;
+    border-radius: 8px;
 }
 
 h2 {
     font-family: "VT323", monospace;
-    color: #FFFFFF;
+    color: #E0E0E0;
 }
 
 .heading {
@@ -91,11 +118,11 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  background: #FFFFFF;
+  background: #E0E0E0;
 }
 
 a:active {
-  background: #FFFFFF;
+  background: #E0E0E0;
   color: #1C1C1C;
 }
 
@@ -171,7 +198,7 @@ form[name='leave_message'] button {
 
 #terminal {
     background-color: #1a1410;
-    color: #ffffff;
+    color: #E0E0E0;
     font-family: "Source Code Pro", monospace;
     padding: 16px;
     border: 1px solid #7F7F7F;
@@ -183,11 +210,11 @@ form[name='leave_message'] button {
 #terminal::before {
     content: "$ cat guestbook.md";
     display: block;
-    color: #ffffff;
+    color: #E0E0E0;
     margin-bottom: 8px;
 }
 
-#terminal::after {
+#terminal::after, h1::after {
     content: "_";
     animation: blink 1s infinite;
     margin-left: 4px;
@@ -205,15 +232,20 @@ form[name='leave_message'] button {
 
 #terminal li {
     list-style: none;
-    margin-bottom: 8px;
     white-space: pre-wrap; /* keeps \n formatting */
 }
 
 #terminal a {
     color: #1a1410;
-    background-color: #B392F0;
+    background-color: #E0E0E0;
 }
 
 #terminal button {
     font-family: "Source Code Pro", monospace;
+    background: #d4d0c8;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
 }

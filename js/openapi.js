@@ -196,6 +196,18 @@ hidePlayersButton.addEventListener("click", function(){
     playersList.innerHTML = "";
 })
 
+//TOGGLE BUTTON FOR DARK / LIGHT MODE
+let toggleButton = document.getElementById("toggle-button")
+toggleButton.innerText = "change background theme ◐"
+toggleButton.addEventListener('click', function(){
+    document.body.classList.toggle("light-mode")
+    if (document.body.classList.contains("light-mode")) {
+        toggleButton.innerText = "change background theme ◑"
+    } else {
+        toggleButton.innerText = "change background theme ◐"
+    }
+})
+
 // DYNAMIC FOOTER 
 let today = new Date()
 let thisYear = today.getFullYear()
