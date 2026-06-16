@@ -16,12 +16,15 @@
     <h1>Open API Project: Football -- Costa Rica at Home and the World Cup</h1>
 
     <nav>
-        <a href="index.html" class="menu">Return to Portfolio</a>
+        <a href="#finalists" class="menu">Finalists</a>
+        <a href="#competitions" class="menu">Local Competitions</a>
+        <a href="#players-view" class="menu">Players</a>
+        <a href="index.html" class="menu">[ Return to Portfolio ]</a>
     </nav>
     <main>
         <p>Since we're missing this year's World Cup, let's use an Open API to check out some data about Costa Rican soccer, including information about teams Costa Rica has joined as finalists at previous World Cup as well information about some start players and local competitions hosted in "Tiquicia."</p>
        
-        <section name="teams-section">
+        <section name="teams-section" id="finalists">
             <h2 class="heading">Who joined Costa Rica as Finalists that year?</h2>
             <p><em>Please note historial World Cup data (pre-2022) requires a paid API plan.</em></p>
             <form>
@@ -41,14 +44,14 @@
             </form>
         </section>
         
-        <section class='api-results'>
+        <section class='api-results' id="competitions">
                 <h2 class="heading">What local competitions does Costa Rica host?</h2>
                     <button id="leagues-button" type="button">Show Local Leagues</button>
                     <button id="leagues-hide" type="button">Hide Local Leagues</button>
                     <ul id='leagues'></ul>
         </section>
 
-        <section class='api-results'>
+        <section class='api-results' id="players-view">
                 <h2 class="heading">Do you know any of these Costa Rican soccer stars?</h2>
                     <button id="players-button" type="button">Show Players</button>
                     <button id="players-hide" type="button">Hide Players</button>

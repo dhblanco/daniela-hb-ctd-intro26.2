@@ -12,9 +12,9 @@ body.light-mode {
 }
 
 #toggle-button {
-    position: absolute;
+    position: fixed;
     z-index: 999;
-    top: 8px;
+    bottom: 8px;
     right: 8px;
     display: flex;
     align-items: center;
