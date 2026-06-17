@@ -46,12 +46,12 @@ seasonYears.addEventListener('change',function(event) {
 let teamsList = document.getElementById("teams")
 
 async function fetchTeams() {
-    console.log("button clicked")
     console.log(`Fetching data from ${seasonYear}`)
     let urlSeason = `https://v3.football.api-sports.io/teams?league=1&season=${seasonYear}`
-    console.log(urlSeason)
 
     try {
+        teamsList.innerHTML = "[ DATA LOADING ... ]";
+
         let response = await fetch(urlSeason, requestOptions)
         
         if(!response.ok){
@@ -59,14 +59,13 @@ async function fetchTeams() {
         }
 
         let data = await response.json()
-        
+
         if(data.errors.plan){
             throw new Error(data.errors.plan);
         } else {
         teamsList.innerHTML = "";
         for (let i = 0; i < data.response.length; i++) {
           const element = data.response[i]["team"].name;
-          console.log(element)
           let name = document.createElement('li')
           name.innerText = element
           teamsList.appendChild(name)
@@ -78,21 +77,15 @@ async function fetchTeams() {
     }
 }
 let teamsButton = document.getElementById("teams-button")
-console.log(teamsButton);
 teamsButton.addEventListener("click", fetchTeams)
 
-
-
 // SECOND ENDPOINT: GATHER LEAGUE NAMES THAT A TEAM HAS PLAYED FOR 
-let idCountry = "29" // TEAM ID FOR COSTA RICA
-let urlLeagues = `https://v3.football.api-sports.io/teams/seasons?team=${idCountry}`
 let leaguesList = document.getElementById("leagues")
 
 async function fetchLeagues() {
-    console.log("button clicked")
-    console.log(urlLeagues)
-
     try {
+        leaguesList.innerHTML = "[ DATA LOADING ... ]";
+
         let response = await fetch("https://v3.football.api-sports.io/leagues?code=CR", requestOptions)
         
         if(!response.ok){
@@ -100,15 +93,13 @@ async function fetchLeagues() {
         }
 
         let data = await response.json()
-        console.log(data);
-        
+
         if(data.errors.plan){
             throw new Error(data.errors.plan);
         } else {
         leaguesList.innerHTML = "";
         for (let i = 0; i < data.response.length; i++) {
           const element = data.response[i]["league"].name;
-          console.log(element)
           let name = document.createElement('li')
           name.innerText = element
           leaguesList.appendChild(name)
@@ -120,64 +111,42 @@ async function fetchLeagues() {
         leaguesList.innerText = error
     }
 }
-
 let leagueButton = document.getElementById("leagues-button")
-console.log(leagueButton);
 leagueButton.addEventListener("click", fetchLeagues)
-
-// HIDE BUTTONS 
-
-let hideLeaguesButton = document.getElementById("leagues-hide")
-hideLeaguesButton.addEventListener("click", function(){
-    console.log("hide leauges button clicked")
-            leaguesList.innerHTML = "";
-})
-
-let hideTeamsButton = document.getElementById("teams-hide")
-hideTeamsButton.addEventListener("click", function(){
-    console.log("hide teams button clicked")
-            teamsList.innerHTML = "";
-})
-
-let hidePlayersButton = document.getElementById("players-hide")
-hidePlayersButton.addEventListener("click", function(){
-    console.log("hide player button clicked")
-            playersList.innerHTML = "";
-})
 
 // ANOTHER ENDPOINT - PLAYER INFO
 let playersList = document.getElementById("players")
 // IDEA: SPOTLIGHT KEYLOR NAVAS, A SKILLED GOAL KEEPER FROM MY HOME COUNTRY
 let idNavas = "731" // PLAYER ID FOR KEYLOR - TOP MEN'S, TOP GOALKEEPER
 let idRocky = "102215" // PLAYER ID FOR RAQUEL ROCKY RODRIGUEZ - TOP CURRENT WOMEN'S
-let idAlonso = "14020" // PLAYER ID FOR ALONSO MARTINEZ - TOP CURRENT MEN'S, FROM MOM'S HOMETOWN
+let idAlonso = "14020" // PLAYER ID FOR ALONSO MARTINEZ - TOP CURRENT MEN'S, FROM MOM'S HOMETOWN I THOUGHT!
 let idPlayers = [
     idNavas, idRocky, idAlonso 
 ]
 
 async function fetchPlayers() {
-    //CLEAR LIST TO PREVENT DUPLICATES
+    //CLEAR LIST EACH FETCH TO PREVENT DUPLICATES
     playersList.innerHTML = "";
+    //CREATE LOADING MESSAGE
+    let playerInfoStatus = document.getElementById('player-info')
+    playerInfoStatus.innerText = "[ DATA LOADING ... ]";
+    console.log(playerInfoStatus.innerText)
 
     try {
-          
-        for (let i = 0; i < idPlayers.length; i++) {
-           
-            let idPlayer = idPlayers[i]
+        for (let index = 0; index < idPlayers.length; index++) {
+            
+            let idPlayer = idPlayers[index]
             
             let urlPlayer = `https://v3.football.api-sports.io/players/profiles?player=${idPlayer}`
-
-            console.log(urlPlayer)
     
             let response = await fetch(urlPlayer, requestOptions)
-            console.log(response)
 
             if(!response.ok){
                 throw new Error(response.status);
             }
 
             let data = await response.json()
-            console.log(data)    
+
 
             if(data.errors.endpoint){
                 throw new Error(data.errors.endpoint);
@@ -191,12 +160,14 @@ async function fetchPlayers() {
                 const position = data.response[i]["player"].position
                 const city = data.response[i]["player"].birth.place
                 let element = `${firstName} ${lastName}<br>Age: ${age} <br>Position: ${position} <br>Birthplace: ${city}`
-                console.log(element)
                 let playerInfo = document.createElement('li')
                 playerInfo.innerHTML = element
                 playersList.appendChild(playerInfo)
             }}
         }
+
+        playerInfoStatus.innerText = ""
+             console.log(playerInfoStatus.innerText)
 
         } catch (error) {
             console.error('An error occurred:',error)
@@ -206,8 +177,36 @@ async function fetchPlayers() {
 }
 
 let playersButton = document.getElementById("players-button")
-console.log(playersButton);
 playersButton.addEventListener("click", fetchPlayers)
+
+// HIDE BUTTONS 
+
+let hideLeaguesButton = document.getElementById("leagues-hide")
+hideLeaguesButton.addEventListener("click", function(){
+    leaguesList.innerHTML = "";
+})
+
+let hideTeamsButton = document.getElementById("teams-hide")
+hideTeamsButton.addEventListener("click", function(){
+    teamsList.innerHTML = "";
+})
+
+let hidePlayersButton = document.getElementById("players-hide")
+hidePlayersButton.addEventListener("click", function(){
+    playersList.innerHTML = "";
+})
+
+//TOGGLE BUTTON FOR DARK / LIGHT MODE
+let toggleButton = document.getElementById("toggle-button")
+toggleButton.innerText = "change background theme ◐"
+toggleButton.addEventListener('click', function(){
+    document.body.classList.toggle("light-mode")
+    if (document.body.classList.contains("light-mode")) {
+        toggleButton.innerText = "change background theme ◑"
+    } else {
+        toggleButton.innerText = "change background theme ◐"
+    }
+})
 
 // DYNAMIC FOOTER 
 let today = new Date()
@@ -216,4 +215,3 @@ let footer = document.querySelector('footer')
 let copyRight = document.createElement('p')
 copyRight.innerHTML = `&copy; ${thisYear} Daniela Hernández Blanco`
 footer.appendChild(copyRight)
-document.body.appendChild(footer)

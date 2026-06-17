@@ -1,10 +1,32 @@
 body {
-    background-color: #F9F3EC;  
-    color: #D18B47;             
-    font-family: sans-serif;
-    font-size: medium;
+    background-color: #1C1C1C;  
+    color: #FFFFFF;                
+    font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
+}
+
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #1C1C1C
+}
+
+#toggle-button {
+    position: fixed;
+    z-index: 999;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #d4d0c8;
+    font-family: "Roboto Mono", monospace;         
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
 }
 
 nav {
@@ -20,29 +42,60 @@ nav {
     flex-wrap: wrap;
     font-weight: bold;
     padding: 0px;
-    background: #A65E2E;
+    background: #E0E0E0;
     opacity: 95%;
     z-index: 0;
 }
-
 
 .menu {    
     padding: 8px;
     text-transform: lowercase;
     text-decoration: none;
-    color: #F8E8D0;
+    color: #1C1C1C;
+}
+
+.menu::first-letter {
+    text-decoration: underline;
 }
 
 
+h1 {
+    font-family: "Space Mono", monospace;
+    color: #deffdd;
+    text-shadow:
+        0 0 2.5px #77fa60,    /* bright neon green core */
+        0 0 5px #9cf18d,   /* slightly softer green */
+        0 0 10px #77fa60,   /* outer green halo */
+        0 0 20px #00ffff;   /* blue overlay for CRT‑style */ 
+    text-align: center;
+    position: relative;
+    background-color: #1a1410;
+    padding: 16px;
+    border: 1px solid #7F7F7F;
+    border-radius: 8px;
+}
+
+h1::after {
+    content: "_";
+    animation: blink 1s infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 30px;
-    color: #A65E2E;
+    font-family: "VT323", monospace;
+    color: #FFFFFF;
 }
 
 .heading {
-        color: #A65E2E;
-        font-weight: bold;
+    color: #1C1C1C;
+    background-color: #E0E0E0;
+    letter-spacing: 0.25em;
+    text-transform: lowercase;
+    text-align: center;
 }
 
 a:focus {
@@ -51,18 +104,17 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  background: #D18B47;
+  background: #FFFFFF;
 }
 
 a:active {
-  background: #D18B47;
-  color: #FFF7E6;
+  background: #FFFFFF;
+  color: #1C1C1C;
 }
 
 section {
     margin: 10px auto;
     padding: 8px;
-    background-color: #FFF7E6;  
     scroll-margin-top: 30px;
 }
 
@@ -79,14 +131,17 @@ section {
 #leagues li,
 #players li {
     list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
+    border: 2px dotted #A8A8A8;
     padding: 8px;
-    flex: 1 1 200px;
-    text-align: center;
+    flex: 1 1 250px;
 }
 
 footer {
     text-align: center;
 
+}
+
+button,
+select {
+    font-family: "Roboto Mono", monospace;         
 }

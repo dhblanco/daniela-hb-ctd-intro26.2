@@ -1,66 +1,33 @@
-/* IN CASE WE NEED TO DEBUG/VISUALIZE USING THE BOX METHOD
-
-* {
-  outline: 2px solid #6B4A2E;
-}
-BUT FOR NOW LET'S SEE WHAT WE HAVE! */
-
-
-
 body {
-    background-color: #F9F3EC;  
-    color: #D18B47;             
-    font-family: sans-serif;
-    font-size: medium;
+    background-color: #1C1C1C;  
+    color: #E0E0E0;    
+    font-family: "Roboto Mono", monospace;         
     margin: 16px 16px 16px 16px;
     padding: 16px;
-
 }
 
-
-.great-vibes-regular {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #1C1C1C
 }
 
-section {
-    margin: 10px auto;
-    padding: 8px;
-    background-color: #FFF7E6;  
-    scroll-margin-top: 30px;
-
+#toggle-button {
+    position: fixed;
+    z-index: 999;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #d4d0c8;
+    font-family: "Roboto Mono", monospace;         
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
 }
-
-h1 {
-    font-family: "Pacifico", serif;
-    color: #6B4A2E;
-    font-size: 40px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    margin: -6px 6px;
-    position: relative;
-
-}
-
-.hero {
-    position: relative;
-        top: -20px;
-}
-
-.drip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -42px auto;
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 0.65;
-    z-index: 1;
-    pointer-events: none;
-}
-
 
 nav {
     top: 0;
@@ -75,32 +42,74 @@ nav {
     flex-wrap: wrap;
     font-weight: bold;
     padding: 0px;
-    background: #A65E2E;
+    background: #E0E0E0;
     opacity: 95%;
     z-index: 0;
-
 }
 
-h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 30px;
-    color: #A65E2E;
-}
-
-.heading {
-        color: #A65E2E;
-        font-weight: bold;
-}
-
-
-.menu {
-    
+.menu {    
     padding: 8px;
     text-transform: lowercase;
     text-decoration: none;
-    color: #F8E8D0;
-
+    color: #1C1C1C;
     
+}
+
+.menu::first-letter {
+    text-decoration: underline;
+}
+
+section {
+    margin: 10px auto;
+    padding: 8px;
+    scroll-margin-top: 30px;
+}
+
+h1 {
+    font-family: "Space Mono", monospace;
+    color: #E0E0E0;
+    text-shadow:
+        0 0 2.5px #77fa60,    /* bright neon green core */
+        0 0 5px #9cf18d,   /* slightly softer green */
+        0 0 10px #77fa60,   /* outer green halo */
+        0 0 20px #00ffff;   /* blue overlay for CRT‑style */ 
+    text-align: center;
+    position: relative;
+    background-color: #1a1410;
+    padding: 16px;
+    border: 1px solid #7F7F7F;
+    border-radius: 8px;
+}
+
+h2 {
+    font-family: "VT323", monospace;
+    color: #E0E0E0;
+}
+
+.heading {
+    color: #1C1C1C;
+    background-color: #E0E0E0;
+    letter-spacing: 0.25em;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+.projects-list li a{
+    color: white;
+}
+.projects-list li a:hover {
+    color: #1C1C1C;
+    background: #E0E0E0;
+}
+.projects-list li a:hover::before{
+    content: " [ ";
+    color: #1C1C1C;
+    background: #E0E0E0;
+}
+.projects-list li a:hover::after{
+    content: " ] ";
+    color: #1C1C1C;
+    background: #E0E0E0;
 }
 
 a:focus {
@@ -109,12 +118,12 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  background: #D18B47;
+  background: #E0E0E0;
 }
 
 a:active {
-  background: #D18B47;
-  color: #FFF7E6;
+  background: #E0E0E0;
+  color: #1C1C1C;
 }
 
 .connect-links  {
@@ -124,23 +133,8 @@ a:active {
     flex-wrap: wrap; 
 }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-    justify-content: center;
-    text-align: center;
-}
-
-.experience-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-
-}
-
+.skills-list,
+.experience-list,
 .projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -154,33 +148,19 @@ li {
     list-style-type: square;
 }
 
-.experience-list li {
+.experience-list li,
+.skills-list li,
+.projects-list li
+ {
     list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
+    border: 2px dotted #A8A8A8;
     padding: 8px;
     flex: 1 1 250px;
 }
 
-.skills-list li {
-    list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
-    padding: 8px;
-    flex: 1 1 250px;
-}
-
-.projects-list li {
-    list-style: none;
-    background-color: #F8E8D0;
-    border: 2px dotted #a7886d;
-    padding: 8px;
-    flex: 1 1 250px;
-}
 
 footer {
     text-align: center;
-
 }
 
 form[name='leave_message'] input,
@@ -188,7 +168,7 @@ form[name='leave_message'] textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-
+    font-family: "Roboto Mono", monospace;         
     background: #FFF;
     border-top: 2px solid #808080;
     border-left: 2px solid #808080;
@@ -198,14 +178,12 @@ form[name='leave_message'] textarea {
 
 form[name='leave_message'] button {
     padding: 8px 16px;
-
     background: #d4d0c8;
-
+    font-family: "Roboto Mono", monospace;         
     border-top: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid #808080;
     border-bottom: 2px solid #808080;
-
     cursor: pointer;
 }
 
@@ -220,21 +198,23 @@ form[name='leave_message'] button {
 
 #terminal {
     background-color: #1a1410;
-    color: #ffffff;
+    color: #E0E0E0;
     font-family: "Source Code Pro", monospace;
     padding: 16px;
-    border: 1px solid #F9F3EC;
+    border: 1px solid #7F7F7F;
+    border-radius: 8px;
+
     margin-top: 16px;
 }
 
 #terminal::before {
-    content: "$ git add guestbook.md";
+    content: "$ cat guestbook.md";
     display: block;
-    color: #ffffff;
+    color: #E0E0E0;
     margin-bottom: 8px;
 }
 
-#terminal::after {
+#terminal::after, h1::after {
     content: "_";
     animation: blink 1s infinite;
     margin-left: 4px;
@@ -252,15 +232,20 @@ form[name='leave_message'] button {
 
 #terminal li {
     list-style: none;
-    margin-bottom: 8px;
     white-space: pre-wrap; /* keeps \n formatting */
 }
 
 #terminal a {
     color: #1a1410;
-    background-color: #B392F0;
+    background-color: #E0E0E0;
 }
 
 #terminal button {
     font-family: "Source Code Pro", monospace;
+    background: #d4d0c8;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
 }
